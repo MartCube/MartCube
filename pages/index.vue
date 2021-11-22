@@ -12,6 +12,7 @@
 
 <script>
 import { groq } from '@nuxtjs/sanity'
+
 export default {
 	async asyncData({ $sanity }) {
 		const query = groq`*[_type == "Article"]{ title, poster }`
