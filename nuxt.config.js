@@ -4,7 +4,7 @@ export default {
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'cyclone',
+		title: 'MartCube',
 		htmlAttrs: {
 			lang: 'en',
 		},
@@ -17,6 +17,13 @@ export default {
 	plugins: [],
 
 	styleResources: { scss: ['./assets/colors.scss'] },
+
+	modules: ['@nuxtjs/sanity/module'],
+
+	sanity: {
+		// add runtime configuration to protect
+		projectId: 'sp2ehz21',
+	},
 
 	buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/style-resources'],
 

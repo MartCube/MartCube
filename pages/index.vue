@@ -11,7 +11,14 @@
 </template>
 
 <script>
-export default {}
+import { groq } from '@nuxtjs/sanity'
+export default {
+	async asyncData({ $sanity }) {
+		const query = groq`*[_type == "Article"]{ title, poster }`
+		const data = await $sanity.fetch(query)
+		return { data }
+	},
+}
 </script>
 
 <style lang="scss" scoped>

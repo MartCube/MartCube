@@ -8,19 +8,11 @@ export function compositionCircle(line) {
 	StartUpTimeline.add(
 		{
 			targets: line,
-			strokeDashoffset: [anime.setDashoffset, 0],
+			strokeDashoffset: [anime.setDashoffset, 50],
 			easing: 'easeInOutSine',
 			duration: 750,
 			delay: anime.stagger(250),
 		},
 		0,
-	).add(
-		{
-			targets: line,
-			strokeDashoffset: [-10, anime.setDashoffset],
-			easing: 'easeInOutSine',
-			duration: 750,
-		},
-		1000,
 	)
 }
