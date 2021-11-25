@@ -3,24 +3,12 @@
 		<BGlogo />
 		<MartCube />
 		<div class="links">
-			<n-link to="/">About</n-link>
+			<n-link to="/blog">Blog</n-link>
 			<n-link to="/">Projects</n-link>
 			<n-link to="/">Contact</n-link>
 		</div>
 	</div>
 </template>
-
-<script>
-import { groq } from '@nuxtjs/sanity'
-
-export default {
-	async asyncData({ $sanity }) {
-		const query = groq`*[_type == "Article"]{ title, poster }`
-		const data = await $sanity.fetch(query)
-		return { data }
-	},
-}
-</script>
 
 <style lang="scss" scoped>
 #index {

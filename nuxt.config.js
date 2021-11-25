@@ -14,7 +14,7 @@ export default {
 
 	css: ['~/assets/main.scss'],
 
-	plugins: [],
+	plugins: ['~/plugins/sanity-image.js'],
 
 	styleResources: { scss: ['./assets/colors.scss'] },
 

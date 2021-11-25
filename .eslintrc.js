@@ -9,9 +9,11 @@ module.exports = {
 		requireConfigFile: false,
 	},
 	extends: ['@nuxtjs', 'prettier', 'plugin:prettier/recommended', 'plugin:nuxt/recommended'],
-	plugins: ['prettier'],
+	plugins: ['prettier', '@asbjorn/groq'],
 	// add your custom rules here
 	rules: {
+		'@asbjorn/groq/no-syntax-errors': 'error',
+		'@asbjorn/groq/no-template-expressions': 'error',
 		'prettier/prettier': [
 			'warn',
 			{
@@ -21,7 +23,7 @@ module.exports = {
 				singleQuote: true,
 				semi: false,
 				trailingComma: 'all',
-				jsxBracketSameLine: false,
+				bracketSameLine: false,
 				bracketSpacing: true,
 				endOfLine: 'auto',
 			},
