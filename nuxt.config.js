@@ -14,8 +14,6 @@ export default {
 
 	css: ['~/assets/main.scss'],
 
-	plugins: ['~/plugins/sanity-image.js'],
-
 	styleResources: { scss: ['./assets/colors.scss'] },
 
 	modules: ['@nuxtjs/sanity/module'],
@@ -23,6 +21,7 @@ export default {
 	sanity: {
 		// add runtime configuration to protect
 		projectId: 'sp2ehz21',
+		minimal: true,
 	},
 
 	buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/style-resources'],

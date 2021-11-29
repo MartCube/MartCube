@@ -11,18 +11,16 @@
 		"lint": "npm run lint:js"
 	},
 	"dependencies": {
-		"@asbjorn/eslint-plugin-groq": "^1.0.0",
 		"@nuxtjs/sanity": "^0.10.0",
-		"@sanity/client": "^2.21.10",
-		"@sanity/image-url": "^1.0.1",
 		"animejs": "^3.2.1",
 		"core-js": "^3.15.1",
-		"groq": "^2.15.0",
-		"nuxt": "^2.15.7",
-		"sanity-blocks-vue-component": "^1.0.1"
+		"nuxt": "^2.15.7"
 	},
 	"devDependencies": {
+		"@asbjorn/eslint-plugin-groq": "^1.0.0",
 		"@babel/eslint-parser": "^7.14.7",
+		"@nuxt/types": "^2.15.8",
+		"@nuxt/typescript-build": "^2.1.0",
 		"@nuxtjs/eslint-config": "^6.0.1",
 		"@nuxtjs/eslint-module": "^3.0.2",
 		"@nuxtjs/style-resources": "^1.2.1",
@@ -31,8 +29,8 @@
 		"eslint-plugin-nuxt": "^2.0.0",
 		"eslint-plugin-prettier": "^4.0.0",
 		"eslint-plugin-vue": "^7.12.1",
-		"node-sass": "^6.0.1",
 		"prettier": "^2.3.2",
+		"sass": "^1.43.5",
 		"sass-loader": "^10.2.0"
 	}
 }
