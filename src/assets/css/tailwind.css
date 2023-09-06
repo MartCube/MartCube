@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		outline: none;
+		-webkit-tap-highlight-color: transparent;
+
+	}
+	h1,h2,p,span::selection {
+		@apply text-dark bg-primary;
+	}
+	
+	html {
+		scroll-behavior: smooth;
+		@apply bg-dark text-white; 
+	}
+	
+	/* App */
+	#app{
+		@apply flex flex-col justify-between items-center;
+	}
+
+	/* H1 */
+	.title { 
+		@apply text-title text-white capitalize;
+	}
+	/* H2 */
+	.subtitle{ 
+		@apply text-subtitle text-white capitalize;
+	}
+	
+	/* section {
+		
+	} */
+}
