@@ -10,7 +10,7 @@ export default defineNuxtConfig({
 	components: {
 		"dirs": [
 			{ "path": "~/components/App", "global": true, pathPrefix: false, },
-			{ "path": "~/components/Blocks", "global": true, pathPrefix: false, },
+			{ "path": "~/components/SanityBlocks", "global": true, pathPrefix: false, },
 		],
 	},
 	app: {
@@ -21,6 +21,7 @@ export default defineNuxtConfig({
 		'@pinia/nuxt',
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/sanity',
+		'nuxt-typed-router',
 	],
 	sanity: {
 		projectId: '00y851a9',

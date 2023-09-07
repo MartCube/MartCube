@@ -4,9 +4,11 @@ defineProps<{ content: any }>()
 
 const serializers = {
 	types: {
-		landingBlock: resolveComponent('LazyLandingBlock'),
-		aboutBlock: resolveComponent('LazyAboutBlock'),
-		contactBlock: resolveComponent('LazyContactBlock'),
+		landingSection: resolveComponent('LazyLandingSection'),
+		aboutSection: resolveComponent('LazyAboutSection'),
+		contactSection: resolveComponent('LazyContactSection'),
+		blogSection: resolveComponent('LazyBlogSection'),
+		workSection: resolveComponent('LazyWorkSection'),
 	},
 }
 </script>

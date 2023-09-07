@@ -2,9 +2,11 @@ export const PageQuery = groq`*[_type == "page" && uid.current == $uid][0]{
 	title,
 	'uid': uid.current,
 	content[]{
-		_type == "landingBlock" => {...},
-		_type == "aboutBlock" => {...},
-		_type == "contactBlock" => {...},
+		_type == "landingSection" => {...},
+		_type == "aboutSection" => {...},
+		_type == "contactSection" => {...},
+		_type == "blogSection" => {...},
+		_type == "workSection" => {...},
 	},
 	metaTags {
 		title,

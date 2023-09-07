@@ -3,8 +3,8 @@
 </script>
 
 <template>
-	<section class="about-block">
-		about-block
+	<section class="about-section">
+		about-section
 	</section>
 </template>
 

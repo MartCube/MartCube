@@ -12,18 +12,27 @@ const links: Link[] = [
 		label: "about",
 	},
 	{
+		value: "/work/",
+		label: "work",
+	},
+	{
+		value: "/blog/",
+		label: "blog",
+	},
+	{
 		value: "/contact/",
 		label: "contact",
 	},
 ]
 const [menuValue, menuToggle] = useToggle()
-const linksRef = ref()
+const linksRef = ref<HTMLElement | null>(null)
+
 onClickOutside(linksRef, () => menuValue.value = false)
 </script>
 
 <template>
 	<header>
-		<nav class="links" :class="{ show: menuValue }">
+		<nav :class="['links', { show: menuValue }]">
 			<ul ref="linksRef"> 
 				<li 
 					class="link" 

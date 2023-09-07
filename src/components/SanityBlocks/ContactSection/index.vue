@@ -3,7 +3,7 @@
 </script>
 
 <template>
-	<section class="contact-block">
-		contact-block
+	<section class="contact-section">
+		contact-section
 	</section>
 </template>
