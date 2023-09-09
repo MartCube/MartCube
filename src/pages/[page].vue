@@ -13,7 +13,7 @@ const { data, pending } = await useAsyncData(
 // handle error
 if (!data.value) throw createError({
 	statusCode: 404,
-	statusMessage: `${params.service} Not Found`,
+	statusMessage: `${params.page} Not Found`,
 	fatal: true
 })
 

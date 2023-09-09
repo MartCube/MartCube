@@ -1,4 +1,9 @@
 <script setup lang="ts">
+defineProps<{
+	pagination: boolean,
+	tags: boolean,
+}>()
+
 
 </script>
 

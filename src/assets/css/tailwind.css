@@ -14,9 +14,9 @@
 		-webkit-tap-highlight-color: transparent;
 
 	}
-	h1,h2,p,span::selection {
+	/* h1,h2,p,span::selection {
 		@apply text-dark bg-primary;
-	}
+	} */
 	
 	html {
 		scroll-behavior: smooth;

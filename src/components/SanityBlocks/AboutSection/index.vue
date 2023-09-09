@@ -1,5 +1,8 @@
 <script setup lang="ts">
-
+defineProps<{
+	aboutText: any,
+	contactText: any,
+}>()
 </script>
 
 <template>

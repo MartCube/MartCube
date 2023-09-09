@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 		'@pinia/nuxt',
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/sanity',
-		'nuxt-typed-router',
+		// 'nuxt-typed-router',
 	],
 	sanity: {
 		projectId: '00y851a9',

@@ -6,7 +6,10 @@ export const PageQuery = groq`*[_type == "page" && uid.current == $uid][0]{
 		_type == "aboutSection" => {...},
 		_type == "contactSection" => {...},
 		_type == "blogSection" => {...},
-		_type == "workSection" => {...},
+		_type == "workSection" => {
+			...,
+			projects[]->{...}
+		},
 	},
 	metaTags {
 		title,

@@ -7,3 +7,9 @@
 		contact-section
 	</section>
 </template>
+
+<style>
+.contact-section{
+	@apply h-[calc(100vh-12rem)] flex justify-center items-center;
+}
+</style>
