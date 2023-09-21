@@ -28,6 +28,11 @@
 		@apply flex flex-col justify-between items-center;
 	}
 
+
+	/* section{
+		@apply w-full h-[6rem] max-w-section;
+	} */
+
 	/* H1 */
 	.title { 
 		@apply text-title text-white capitalize;

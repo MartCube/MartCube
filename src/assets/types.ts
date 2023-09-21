@@ -35,6 +35,11 @@ export interface ContactForm {
 	subject: string;
 	message: string;
 }
+export interface Blog {
+	articleList: Article[],
+	articleTags: string[],
+	articleTotal: number,
+}
 
 // sanity docs
 export interface Page {

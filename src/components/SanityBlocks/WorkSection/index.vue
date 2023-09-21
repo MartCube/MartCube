@@ -9,7 +9,6 @@ defineProps<{
 <template>
 	<section class="work-section">
 		<ProjectCard v-for="project in projects" :data="project" />
-		
 	</section>
 </template>
 

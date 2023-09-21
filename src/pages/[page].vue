@@ -30,6 +30,6 @@ if (!data.value) throw createError({
 
 <style>
 .page {
-	@apply min-h-[calc(100vh-12rem)];
+	@apply w-full max-w-section min-h-[calc(100vh-12rem)];
 }
 </style>

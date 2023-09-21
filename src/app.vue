@@ -2,6 +2,6 @@
   <div id="app">
 		<AppNavbar />
     <NuxtPage />
-		<AppFooter />
+		<!-- <AppFooter /> -->
   </div>
 </template>

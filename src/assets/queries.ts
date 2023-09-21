@@ -1,4 +1,4 @@
-// Page
+// Page - $uid
 export const PageQuery = groq`*[_type == "page" && uid.current == $uid][0]{
 	title,
 	'uid': uid.current,
@@ -18,6 +18,43 @@ export const PageQuery = groq`*[_type == "page" && uid.current == $uid][0]{
 		"image": image.asset._ref,
 	}
 }`
+
+
+// Article - $uid
+export const ArticleQuery = groq`*[_type == "article" && uid.current == $uid][0]{
+	title,
+	publishedAt,
+	'uid': uid.current,
+	'tag': tag->value,
+	'poster': poster.asset._ref, 
+	content[] {
+		_type == 'block' => { ... },
+		// _type == 'image' => { _key, _type, "src": asset._ref, },
+		// _type == 'gallery' => { _key, _type, "images": images[].asset._ref },
+		// _type == 'youtube' => { ... },
+	},
+	// metaTags {
+	// 	title,
+	// 	description,
+	// 	'image': image.asset._ref,
+	// }
+}`
+
+
+// Blog - $activeTag $from $to
+export const BlogQuery = groq`{
+	"articleList":*[_type == "article" && $activeTag in [tag->value,"all"]][$from...$to]{
+		title,
+		publishedAt,
+		'uid': uid.current,
+		'tag': tag->value,
+		'poster': poster.asset._ref,
+	},
+	"articleTags": *[_type == "articleTag"].value,
+	"articleTotal": count(*[ _type == "article" && $activeTag in [tag->value, 'all']]),
+}`
+
+
 // Sitemap
 export const SitemapQuery = groq`*[ _type in ["page", "article"] ]{
 	_type == "page"  => {
@@ -32,35 +69,4 @@ export const SitemapQuery = groq`*[ _type in ["page", "article"] ]{
 		"priority": sitemap.priority,
 		"lastmod" :_updatedAt,
 	},
-}`
-
-
-// Blog
-export const Articles_Q = groq`*[_type == "article" && $activeTag in [tag->title, "all"]][$from...$to]{
-	title,
-	'uid': uid.current,
-	'tag': tag->value,
-	publishedAt
-	'poster': poster.asset._ref
-}`
-export const ArticleTags_Q = groq`*[_type == "articleTag"].title`
-export const ArticleCount_Q = groq`count(*[ _type == "article" && $activeTag in [tag->title, 'all']])`
-// Article
-export const Article_Q = groq`*[_type == "article" && uid.current == $uid][0]{
-	title, 
-	'poster': poster.asset._ref, 
-	'uid': uid.current,
-	'tag': tag->title,
-	publishedAt,
-	content[] {
-		_type == 'block' => { ... },
-		_type == 'image' => { _key, _type, "src": asset._ref, },
-		_type == 'gallery' => { _key, _type, "images": images[].asset._ref },
-		_type == 'youtube' => { ... },
-	},
-	metaTags {
-		title,
-		description,
-		'image': image.asset._ref,
-	}
 }`
