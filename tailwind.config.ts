@@ -16,8 +16,8 @@ export default <Partial<Config>>{
 			dark: "#17171d",
 			dark2: "#1f1f27",
 			dark3: "#24242E",
-			greyLight: '#A4A4B7',
-			greyDark: '#363645',
+			lightGrey: '#A4A4B7',
+			darkGrey: '#363645',
 			error: '#ff006e',
 		},
 		fontFamily:{

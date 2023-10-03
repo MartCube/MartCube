@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import { useField } from 'vee-validate'
-import { toRef } from 'vue'
 
 const props = defineProps<{
-	data: {
-		name: string,
-		placeholder: string,
-		type: string,
-	}
+	name: string,
 }>()
-const nameRef = toRef(props.data, 'name')
-const { errorMessage, value} = useField(nameRef, {})
+
+const { value, errorMessage } = useField(() => props.name);
 </script>
 
 <template>
@@ -21,60 +16,51 @@ const { errorMessage, value} = useField(nameRef, {})
 			</span>
 		</div>
 		<input 
-			v-if="data.type == 'text'" 
-			:class="{ success: !errorMessage && value }" 
+			type="text"
 			v-model="value" 
-			type="text" 
-			:id="data.name" 
-			:name="data.name" 
-			:placeholder="data.placeholder" />
+			:class="{ success: !errorMessage && value }" 
+			:id="name" 
+			:name="name"
+			:placeholder="name" 
+		/>
+		<div class="line"></div>
 	</div>
 </template>
 
-<style lang="scss" scoped>
-.field {
-	width: 100%;
-	height: 3rem;
-	position: relative;
-
-	display: flex;
-	flex-direction: column;
-
-	.error {
-		position: absolute;
-		top: -1rem;
-		right: 1.5rem;
-
-		span {
-			color: $error;
-			font-weight: 300;
-			font-size: .75rem;
-			line-height: .75rem;
-		}
-	}
-
-	input {
-		width: 100%;
-		height: 3rem;
-		padding: 0 1.5rem;
-		border-radius: 1.5rem;
-		border: 1px solid $text;
-
-		color: $text;
-		font-size: 1.2rem;
-
-
-		&::placeholder {
-			color: $text;
-		}
-
-		&.success {
-			border-color: $secondary;
-		}
-
-		&.error {
-			border-color: $error;
-		}
-	}
+<style scoped>
+.field{
+	@apply w-full relative;
+	@apply flex flex-col;
 }
+
+/* error */
+.field .error{
+	@apply absolute top-[-1rem] right-0;
+}
+.field .error span{ 
+	@apply text-base text-error;
+}
+
+/* input */
+.field input{
+	@apply w-full h-[3rem];
+	@apply bg-[transparent] outline-none;
+	@apply border-b-[1px] border-solid border-white;
+	@apply text-white text-base;
+}
+.field input::placeholder{
+	@apply text-lightGrey text-base capitalize;
+}
+.field input:focus~.line{
+	@apply w-full;
+}
+
+.line{
+	@apply w-0; /* will change */
+	@apply absolute bottom-0 left-0 h-[1px] bg-primary;
+}
+
 </style>
+
+
+

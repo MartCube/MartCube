@@ -1,23 +1,21 @@
 <script setup lang="ts">
-import { StringMappingType } from "typescript";
-import type { ContactForm } from "~~/src/assets/types"
 
 defineProps<{
-	email: string,
-	subject: string,
-	message: string,
-	submitBtn: string,
+	contactForm:{
+		email:string,
+		subject:string,
+		message:string,
+		submitBtn:string,
+	},
 	contactMsg: any,
+	responseMsg: any,
 }>()
 </script>
 
 <template>
 	<section class="contact-section">
-		{{ email }}
-		{{ subject }}
-		{{ message }}
-		{{ submitBtn }}
-		<AppRichText :data="contactMsg" />
+		<!-- <div class="dots"></div> -->
+		<ContactForm :data="contactForm"/>
 	</section>
 </template>
 
@@ -25,4 +23,4 @@ defineProps<{
 .contact-section{
 	@apply h-[calc(100vh-12rem)] flex flex-col justify-center items-center;
 }
-</style>
+</style>	
