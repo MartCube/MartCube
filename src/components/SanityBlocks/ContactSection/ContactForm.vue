@@ -2,7 +2,6 @@
 import { useForm } from 'vee-validate';
 import { toTypedSchema } from '@vee-validate/zod';
 import { z } from 'zod';
-// import emailjs from '@emailjs/browser';
 
 defineProps<{
 	data:{
@@ -27,15 +26,6 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
 		subject: values.subject,
 		message: values.message,
 	}
-	// emailjs.send('service_7bcefcm', 'template_contactForm', emailData, 'KYvnHwcmjWB7S78Xm')
-	// 	.then(
-	// 		(result:any) => {
-	// 			console.log('SUCCESS!', result)
-	// 		},
-	// 		(error:any) => {
-	// 			console.log('ERROR...', error)
-	// 		},
-	// 	)
 
 	resetForm()
 })
@@ -67,6 +57,10 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
 form{
 	@apply w-full max-w-[32rem] h-[600px];
 	@apply flex flex-col justify-center gap-[3rem]
+}
+form .submit{
+	@apply w-full h-[2rem];
+	@apply border-l-[1px] border-r-[1px] border-solid border-white;
 }
 </style>
 
