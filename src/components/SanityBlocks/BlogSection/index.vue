@@ -6,8 +6,9 @@ import type { Blog } from "~~/src/assets/types"
 const pageSize = 2
 const { query } = useRoute()
 const activeTag = ref('all')
-if ( query.tag ) activeTag.value = String(query.tag)
 const activePage = ref(1)
+
+if ( query.tag ) activeTag.value = String(query.tag)
 if ( query.page ) activePage.value = Number(query.page)
 
 const params = ref({ 

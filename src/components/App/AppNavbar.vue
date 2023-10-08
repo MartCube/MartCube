@@ -29,9 +29,7 @@ const linksRef = ref<HTMLElement | null>(null)
 onClickOutside(linksRef, () => menuValue.value = false)
 
 
-
 const { breadcrumbs } = useBreadcrumbs()
-
 </script>
 
 <template>

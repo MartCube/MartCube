@@ -1,29 +1,37 @@
-interface Link {
-	value: string,
-	label: string,
-}
-
+import type { Link } from "~~/src/assets/types"
 
 export const useBreadcrumbs = () => {
-	// const router = useRouter()
-	// const routes = router.getRoutes()
 	const route = useRoute()
 	
+	const homePage = { 
+		label: 'Mart Cube', 
+		value: '/' 
+	}
+	let pageLink = { 
+		label: '', 
+		value: '' 
+	}
+	const breadcrumbs = ref<Link[]>([homePage])
 
-	const HOMEPAGE = { label: 'Mart Cube', value: '/' }
-	const breadcrumbs = ref<Link[]>([HOMEPAGE])
 
-
-	function getBreadcrumbs(currentRoute: string): Link[] {
+	function getCurrentRoute(currentRoute: string): Link[] {
 		
-		// create links from current route
-		// create link only first level
-		// /blog/atomic-bent-100  -> /blog
-		// /work -> /work
-		// grab link from first to second slash "/"
+		if(route.name == 'page'){
+			pageLink = {
+				label: currentRoute.replace(/\//g, ''),
+				value: currentRoute,
+			}
+		}
+		else if (route.name == 'blog-article'){
+			pageLink = {
+				label: 'blog',
+				value: '/blog/',
+			}
+		}
 
 		return [
-			
+			homePage,
+			pageLink
 		]
 	}
 
@@ -34,7 +42,7 @@ export const useBreadcrumbs = () => {
 				breadcrumbs.value = []
 				return
 			}
-			breadcrumbs.value = getBreadcrumbs(route.path)
+			breadcrumbs.value = getCurrentRoute(route.path)
 	}, {
 			immediate: true,
 	})
