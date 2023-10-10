@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { useNow, useDateFormat } from '@vueuse/core'
+import { useDateFormat, useNow } from '@vueuse/core'
 
 const formatted = useDateFormat(useNow(), 'YYYY')
-function scrollToTop(){
-	window.scrollTo({ top: 0, behavior: "smooth" })
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>
 
 <template>
-	<footer>
-		<span>
-			{{ formatted }} © All rights reserved 
-		</span>
-		<div
-			class="scroll-top"
-			@click="scrollToTop()">
-			arrow
-		</div>
-	</footer>
+  <footer>
+    <span>
+      {{ formatted }} © All rights reserved
+    </span>
+    <div
+      class="scroll-top"
+      @click="scrollToTop()"
+    >
+      arrow
+    </div>
+  </footer>
 </template>
-
 
 <style>
 footer {
@@ -28,7 +28,7 @@ footer {
 }
 footer::after{
 	@apply content-[''] absolute w-full h-[1px] top-0 left-0 bg-white;
-}					
+}
 
 footer .scroll-top{
 	@apply cursor-pointer;

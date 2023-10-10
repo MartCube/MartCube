@@ -1,65 +1,65 @@
 <script setup lang="ts">
-import { useToggle, onClickOutside } from '@vueuse/core'
-import type { Link } from "~~/src/assets/types"
+import { onClickOutside, useToggle } from '@vueuse/core'
+import type { Link } from '~~/src/assets/types'
 
 const links: Link[] = [
-	{
-		value: "/",
-		label: "home",
-	},
-	{
-		value: "/about",
-		label: "about",
-	},
-	{
-		value: "/work",
-		label: "work",
-	},
-	{
-		value: "/blog",
-		label: "blog",
-	},
-	{
-		value: "/contact",
-		label: "contact",
-	},
+  {
+    value: '/',
+    label: 'home',
+  },
+  {
+    value: '/about',
+    label: 'about',
+  },
+  {
+    value: '/work',
+    label: 'work',
+  },
+  {
+    value: '/blog',
+    label: 'blog',
+  },
+  {
+    value: '/contact',
+    label: 'contact',
+  },
 ]
 const [menuValue, menuToggle] = useToggle()
 const linksRef = ref<HTMLElement | null>(null)
 onClickOutside(linksRef, () => menuValue.value = false)
 
-
 const { breadcrumbs } = useBreadcrumbs()
 </script>
 
 <template>
-	<header>
-		<nav :class="['links', { show: menuValue }]">
-			<ul ref="linksRef"> 
-				<li 
-					class="link" 
-					v-for="link in links" 
-					@click="menuValue = false"
-				>
-					<NuxtLink :to="link.value">
-						{{ link.label }}
-					</NuxtLink>
-				</li>
-			</ul>
-		</nav>
-		<div class="breadcrumbs">
-			<NuxtLink 
-				v-for="item in breadcrumbs" 
-				:to="item.value"
-			>
-				{{item.label}}
-			</NuxtLink>
-		</div>
-		<div :class="['menu', { hide: menuValue }]" @click="menuToggle()">
-			<span class="bar" />
-			<span class="bar" />
-		</div>
-	</header>
+  <header>
+    <nav class="links" :class="[{ show: menuValue }]">
+      <ul ref="linksRef">
+        <li
+          v-for="link in links"
+          class="link"
+          @click="menuValue = false"
+        >
+          <NuxtLink :to="link.value">
+            {{ link.label }}
+          </NuxtLink>
+        </li>
+      </ul>
+    </nav>
+    <div class="breadcrumbs">
+      <NuxtLink
+        v-for="item in breadcrumbs"
+        :key="item.value"
+        :to="item.value"
+      >
+        {{ item.label }}
+      </NuxtLink>
+    </div>
+    <div class="menu" :class="[{ hide: menuValue }]" @click="menuToggle()">
+      <span class="bar" />
+      <span class="bar" />
+    </div>
+  </header>
 </template>
 
 <style>
@@ -69,7 +69,7 @@ header {
 }
 header::after{
 	@apply content-[''] absolute w-full h-[1px] bottom-0 left-0 bg-white;
-}				
+}
 
 /* links */
 header .links{
@@ -130,4 +130,3 @@ header .breadcrumbs{
 	}
 }
 </style>
-

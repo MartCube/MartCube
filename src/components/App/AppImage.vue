@@ -3,56 +3,55 @@
 // const isMobile = useMediaQuery('(max-width: 700px)')
 
 const props = defineProps<{
-	src: string,
-	width: number,
-	height: number,
-	alt: string,
-	hotspot?:{
-		x: string,
-		y: string,
-	}
+  src: string
+  width: number
+  height: number
+  alt: string
+  hotspot?: {
+    x: string
+    y: string
+  }
 }>()
 
 const emits = defineEmits<{
-	(e: 'imgLoaded', imgLoaded: true): void 
+  (e: 'imgLoaded', imgLoaded: true): void
 }>()
 
 const lazyOptions = reactive({
-	src: props.src,
-	lifecycle: {
-		loaded: (el:HTMLImageElement) => {
-			emits('imgLoaded', true)
-		}
-	}
+  src: props.src,
+  lifecycle: {
+    loaded: (el: HTMLImageElement) => {
+      emits('imgLoaded', true)
+    },
+  },
 })
-
 </script>
 
 <template>
-	<div class="image">
-		<SanityImage 
-			:asset-id="src" 
-			:w="width" 
-			:h="height" 
-			auto="format"
-			fit="crop"
-			crop="focalpoint" 
-			:fp-x="hotspot?.x" 
-			:fp-y="hotspot?.y"
-		>
-			<template #default="{ src }">
-				<img 
-					v-lazy="{src: src, lifecycle: lazyOptions.lifecycle}" 
-					:width="width" 
-					:height="height" 
-					:alt="alt"
-				/>
-			</template>
-		</SanityImage>
-	</div>
+  <div class="image">
+    <SanityImage
+      :asset-id="src"
+      :w="width"
+      :h="height"
+      auto="format"
+      fit="crop"
+      crop="focalpoint"
+      :fp-x="hotspot?.x"
+      :fp-y="hotspot?.y"
+    >
+      <template #default="{ src }">
+        <img
+          v-lazy="{ src, lifecycle: lazyOptions.lifecycle }"
+          :width="width"
+          :height="height"
+          :alt="alt"
+        >
+      </template>
+    </SanityImage>
+  </div>
 </template>
 
-<style lang="scss" >
+<style lang="scss">
 .image {
 	display: flex;
 	position: relative;
@@ -67,7 +66,7 @@ const lazyOptions = reactive({
 		border: none;
 		opacity: 0;
 
-		// image transition 
+		// image transition
 		&[lazy=loading] {
 			opacity: 0;
 		}

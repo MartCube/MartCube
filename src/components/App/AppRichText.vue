@@ -3,7 +3,7 @@ defineProps<{ data: any }>()
 </script>
 
 <template>
-	<div class="rich-text">
-		<SanityContent :blocks="data" />
-	</div>
+  <div class="rich-text">
+    <SanityContent :blocks="data" />
+  </div>
 </template>
