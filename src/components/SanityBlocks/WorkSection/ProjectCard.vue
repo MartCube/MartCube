@@ -1,21 +1,20 @@
 <script setup lang="ts">
-import type { Project } from '~/assets/types';
+import type { Project } from '~/assets/types'
 
 defineProps<{
-	data: Project
+  data: Project
 }>()
 </script>
 
 <template>
-	<section class="project-card">
-		<h2>{{ data.title }}</h2>
-		<p>{{ data.description }}</p>
-		
-	</section>
+  <section class="project-card">
+    <h2>{{ data.title }}</h2>
+    <p>{{ data.description }}</p>
+  </section>
 </template>
 
 <style>
 .project-card{
-	@apply flex flex-col;
+@apply flex flex-col;
 }
 </style>

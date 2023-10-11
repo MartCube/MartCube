@@ -3,13 +3,13 @@
 </script>
 
 <template>
-	<section class="landing-section">
-		<AppLogo/>
-	</section>
+  <section class="landing-section">
+    <AppLogo />
+  </section>
 </template>
 
 <style>
 .landing-section{
-	@apply h-[calc(100vh-12rem)] flex justify-center items-center;
+@apply h-[calc(100vh-12rem)] flex justify-center items-center;
 }
 </style>

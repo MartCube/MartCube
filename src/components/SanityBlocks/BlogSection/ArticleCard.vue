@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { ArticleCard } from "~~/src/assets/types"
+import type { ArticleCard } from '~~/src/assets/types'
 
 defineProps<{
-	data: ArticleCard
+  data: ArticleCard
 }>()
 </script>
 
 <template>
-	<NuxtLink :to="data.uid">
-		{{ data.title }}
-	</NuxtLink>
+  <NuxtLink :to="data.uid">
+    {{ data.title }}
+  </NuxtLink>
 </template>

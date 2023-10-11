@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-	articleTags: string[],
-	activeTag: string,
+  articleTags: string[]
+  activeTag: string
 }>()
 
 defineEmits<{
@@ -10,36 +10,37 @@ defineEmits<{
 </script>
 
 <template>
-	<ul class="filter">
-			<li 
-				:class="['tag', { active: activeTag == 'all' }]" 
-				@click="$emit('updateTag', 'all')"
-			>
-				<NuxtLink 
-					:to="`/blog?tag=all`" 
-					rel="noindex fallow"
-				>
-					<em>#</em> all
-				</NuxtLink>
-			</li>
-			<li 
-				v-for="item in articleTags" 
-				:class="['tag', { active: activeTag == item }]" 
-				@click="$emit('updateTag', item)"
-			>
-				<NuxtLink 
-					:to="`/blog?tag=${item}`" 
-					rel="noindex fallow"
-				>
-					<em>#</em> {{ item }}
-				</NuxtLink>
-			</li>
-	</ul>
+  <ul class="filter">
+    <li
+      class="tag" :class="[{ active: activeTag === 'all' }]"
+      @click="$emit('updateTag', 'all')"
+    >
+      <NuxtLink
+        to="/blog?tag=all"
+        rel="noindex fallow"
+      >
+        <em>#</em> all
+      </NuxtLink>
+    </li>
+    <li
+      v-for="item in articleTags"
+      :key="item"
+      class="tag" :class="[{ active: activeTag === item }]"
+      @click="$emit('updateTag', item)"
+    >
+      <NuxtLink
+        :to="`/blog?tag=${item}`"
+        rel="noindex fallow"
+      >
+        <em>#</em> {{ item }}
+      </NuxtLink>
+    </li>
+  </ul>
 </template>
 
 <style>
 .filter{
-	@apply w-full h-auto;
-	@apply flex;
+@apply w-full h-auto;
+@apply flex;
 }
 </style>

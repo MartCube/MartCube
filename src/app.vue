@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-		<AppNavbar />
+    <AppNavbar />
     <NuxtPage />
-		<!-- <AppFooter /> -->
+    <!-- <AppFooter /> -->
   </div>
 </template>
