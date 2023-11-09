@@ -8,6 +8,9 @@ defineProps<{
 
 <template>
   <NuxtLink :to="data.uid">
-    {{ data.title }}
+    <h3>{{ data.title }}</h3>
+    <AppImage
+      :src="data.poster"
+    />
   </NuxtLink>
 </template>

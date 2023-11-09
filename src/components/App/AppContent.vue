@@ -5,11 +5,11 @@ defineProps<{ content: any }>()
 
 const serializers = {
   types: {
-    landingSection: resolveComponent('LazyLandingSection'),
-    aboutSection: resolveComponent('LazyAboutSection'),
-    contactSection: resolveComponent('LazyContactSection'),
-    blogSection: resolveComponent('LazyBlogSection'),
-    workSection: resolveComponent('LazyWorkSection'),
+    landingSection: resolveComponent('LandingSection'),
+    aboutSection: resolveComponent('AboutSection'),
+    contactSection: resolveComponent('ContactSection'),
+    blogSection: resolveComponent('BlogSection'),
+    workSection: resolveComponent('WorkSection'),
   },
 }
 </script>
@@ -20,8 +20,8 @@ const serializers = {
 
 <style>
 .content {
-	width: 100%;
-	height: 100%;
-	min-height: 100vh;
+width: 100%;
+height: 100%;
+min-height: 100vh;
 }
 </style>

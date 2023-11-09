@@ -21,8 +21,13 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/sanity',
-    // 'nuxt-typed-router',
+    '@nuxt/image',
   ],
+  image: {
+    sanity: {
+      projectId: '00y851a9',
+    },
+  },
   sanity: {
     projectId: '00y851a9',
     dataset: 'production',
@@ -34,5 +39,8 @@ export default defineNuxtConfig({
       crawlLinks: true,
       // routes: ['/sitemap.xml']
     },
+  },
+  experimental: {
+    componentIslands: true,
   },
 })

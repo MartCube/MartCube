@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { Article } from '~~/src/assets/types'
+import { type ArticleCard } from '~~/src/assets/types'
 
 defineProps<{
-  data: Article[]
+  data: ArticleCard[]
 }>()
 </script>
 
 <template>
   <ul class="article-list">
     <li v-for="item in data" :key="item.uid">
-      {{ item.title }}
+      <ArticleCard :data="item" />
     </li>
   </ul>
 </template>
