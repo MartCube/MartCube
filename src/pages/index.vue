@@ -29,7 +29,8 @@ if (!data.value) {
   </div>
 </template>
 
-<style>
+<!-- eslint-disable no-tabs -->
+<style lang="postcss" scoped>
 .page {
 @apply min-h-[calc(100vh-12rem)];
 }

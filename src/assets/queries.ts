@@ -1,5 +1,6 @@
-// Page - $uid
-export const PageQuery = groq`*[_type == "page" && uid.current == $uid][0]{
+/* eslint-disable no-tabs */
+export const PageQuery = groq`*
+[_type == "page" && uid.current == $uid][0]{
 	title,
 	'uid': uid.current,
 	content[]{
@@ -18,7 +19,6 @@ export const PageQuery = groq`*[_type == "page" && uid.current == $uid][0]{
 		"image": image.asset._ref,
 	}
 }`
-
 
 // Article - $uid
 export const ArticleQuery = groq`*[_type == "article" && uid.current == $uid][0]{
@@ -40,7 +40,6 @@ export const ArticleQuery = groq`*[_type == "article" && uid.current == $uid][0]
 	// }
 }`
 
-
 // Blog - $activeTag $from $to
 export const BlogQuery = groq`{
 	"articleList":*[_type == "article" && $activeTag in [tag->value,"all"]][$from...$to]{
@@ -54,10 +53,9 @@ export const BlogQuery = groq`{
 	"articleTotal": count(*[ _type == "article" && $activeTag in [tag->value, 'all']]),
 }`
 
-
 // Sitemap
 export const SitemapQuery = groq`*[ _type in ["page", "article"] ]{
-	_type == "page"  => {
+ 	_type == "page"  => {
 		"url": "/" + uid.current + "/",
 		"changefreq": "monthly",
 		"priority": sitemap.priority,

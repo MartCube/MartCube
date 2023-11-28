@@ -22,25 +22,6 @@ export interface Link {
   label: string
 }
 
-// components
-export interface ArticleCard {
-  title: string
-  poster?: string
-  uid: string
-  tag: string
-  publishedAt: string
-}
-export interface ContactForm {
-  email: string
-  subject: string
-  message: string
-}
-export interface Blog {
-  articleList: ArticleCard[]
-  articleTags: string[]
-  articleTotal: number
-}
-
 // sanity docs
 export interface Page {
   title: string
@@ -49,6 +30,11 @@ export interface Page {
   metaTags: MetaTags
 }
 export interface Article {
+  title: string
+  poster?: string
+  uid: string
+  tag: string
+  publishedAt: string
   content: any[]
   metaTags: {
     title: string
@@ -61,4 +47,16 @@ export interface Project {
   description: string
   website: string
   poster: string
+}
+
+// components
+export interface ContactForm {
+  email: string
+  subject: string
+  message: string
+}
+export interface Blog {
+  articleList: Article[]
+  articleTags: string[]
+  articleTotal: number
 }

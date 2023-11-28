@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { type ArticleCard } from '~~/src/assets/types'
+import ArticleCard from '../BlogSection/ArticleCard.vue'
+import type { Article } from '~~/src/assets/types'
 
 defineProps<{
-  data: ArticleCard[]
+  data: Article[]
 }>()
 </script>
 
@@ -14,9 +15,10 @@ defineProps<{
   </ul>
 </template>
 
-<style>
+<!-- eslint-disable no-tabs -->
+<style lang="postcss" scoped>
 .article-list{
-@apply w-full h-auto;
-@apply flex justify-evenly;
+	@apply w-full h-auto;
+	@apply flex justify-evenly;
 }
 </style>

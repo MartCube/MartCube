@@ -37,6 +37,7 @@ const { breadcrumbs } = useBreadcrumbs()
       <ul ref="linksRef">
         <li
           v-for="link in links"
+          :key="link.value"
           class="link"
           @click="menuValue = false"
         >
@@ -62,54 +63,72 @@ const { breadcrumbs } = useBreadcrumbs()
   </header>
 </template>
 
-<style>
+<!-- eslint-disable no-tabs -->
+<style lang="postcss" scoped>
 header {
 	@apply w-full max-w-section h-[6rem] pb-[1rem] relative;
 	@apply flex justify-between items-end;
-}
-header::after{
-	@apply content-[''] absolute w-full h-[1px] bottom-0 left-0 bg-white;
-}
+	&::after{
+		@apply content-[''] absolute w-full h-[1px] bottom-0 left-0 bg-white;
+	}
+	/* links */
+	.links{
+		@apply hidden;
+		@apply fixed z-10 top-0 left-0 w-full h-full bg-dark;
+		@apply justify-center items-center;
+		&.show{
+			@apply flex;
+		}
+		ul{
+			@apply w-full flex justify-evenly;
+			li a{
+				@apply text-title uppercase select-none;
+			}
+		}
+	}
+	/* menu */
+	.menu{
+		@apply w-[2rem] h-[2rem];
+		@apply z-10 overflow-hidden cursor-pointer;
+		@apply flex flex-col justify-around;
 
-/* links */
-header .links{
-	@apply hidden;
-	@apply fixed z-10 top-0 left-0 w-full h-full bg-dark;
-	@apply justify-center items-center;
-}
-header .links.show{
-	@apply flex;
-}
-header .links ul{
-	@apply w-full flex justify-evenly;
-}
-header .links ul li a{
-	@apply text-title uppercase select-none;
-}
+		.bar{
+			@apply w-full h-[2px] bg-primary;
+			animation: menuAnim 350ms ease forwards;
+			&:last-of-type {
+				@apply self-end;
+			}
+		}
+		&.hide{
+			@apply cursor-default;
+			.bar{
+				animation: menuAnimHide 350ms ease forwards;
+			}
+		}
+	}
+	/* breadcrumbs */
+	.breadcrumbs{
+		@apply w-fit h-[2rem];
+		@apply flex justify-center items-center;
+		a{
+			@apply text-subtitle capitalize;
+			@apply flex justify-center items-center gap-[1rem];
+			&:first-child::before{
+				@apply content-[''] w-[1px] h-[2rem] bg-white;
+			}
 
-/* menu */
-header .menu{
-	@apply w-[2rem] h-[2rem];
-	@apply z-10 overflow-hidden cursor-pointer;
-	@apply flex flex-col justify-around;
-}
-header .menu.hide{
-	@apply cursor-default;
-}
-header .menu .bar{
-	@apply w-full h-[2px] bg-primary;
-	animation: menuAnim 350ms ease forwards;
-}
-header .menu.hide .bar{
-	animation: menuAnimHide 350ms ease forwards;
-}
-header .menu .bar:last-of-type {
-	@apply self-end;
-}
-/* breadcrumbs */
-header .breadcrumbs{
-	@apply h-[2rem];
-	@apply flex justify-center items-center;
+			&::after{
+				@apply content-[''] w-[1rem] h-[1px] bg-white;
+			}
+
+			&:last-child{
+				@apply pl-[1rem];
+				&::after{
+					@apply hidden;
+				}
+			}
+		}
+	}
 }
 
 /* Animation */

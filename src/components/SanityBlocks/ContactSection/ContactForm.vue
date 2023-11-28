@@ -2,6 +2,7 @@
 import { useForm } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import { z } from 'zod'
+import VeeInput from './VeeInput.vue'
 
 defineProps<{
   data: {
@@ -54,7 +55,7 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
 
 <style>
 form{
-@apply w-full max-w-[32rem] h-[600px];
+@apply w-full max-w-[26rem] h-[600px] p-[2rem];
 @apply flex flex-col justify-center gap-[3rem]
 }
 form .submit{

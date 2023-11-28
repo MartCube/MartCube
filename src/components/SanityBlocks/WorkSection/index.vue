@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ProjectCard from './ProjectCard.vue'
 import type { Project } from '~/assets/types'
 
 defineProps<{
@@ -9,15 +10,18 @@ defineProps<{
 <template>
   <section class="work-section">
     <ProjectCard
-      v-for="project in projects"
+      v-for="(project, index) in projects"
       :key="project.title"
       :data="project"
+      :card-index="index + 1"
     />
   </section>
 </template>
 
-<style>
+<!-- eslint-disable no-tabs -->
+<style lang="postcss" scoped>
 .work-section{
-@apply h-[calc(100vh-12rem)] flex flex-col justify-center gap-[2rem];
+	@apply mt-[5rem] flex flex-col items-end;
+	@apply border-l-[1px] border-solid border-white;
 }
 </style>

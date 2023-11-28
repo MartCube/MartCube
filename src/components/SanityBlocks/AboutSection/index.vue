@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import SquareDots from './SquareDots.vue'
+
 defineProps<{
   aboutText: any
   contactText: any
@@ -7,25 +9,39 @@ defineProps<{
 
 <template>
   <section class="about-section">
-    <AppRichText :data="aboutText" class="about-text" />
-    <div class="about-dots">
-      <!-- svg -->
+    <div class="row-wrap">
+      <AppRichText
+        class="rich-text"
+        :data="aboutText"
+      />
+      <SquareDots class="square-dots" />
     </div>
-    <div class="about-dots">
-      <!-- svg -->
+    <div class="row-wrap reverse">
+      <SquareDots class="square-dots" />
+      <AppRichText
+        class="rich-text"
+        :data="contactText"
+      />
     </div>
-    <AppRichText :data="contactText" class="contact-text" />
   </section>
 </template>
 
-<style>
-.about-section{
-@apply max-w-section h-[calc(100vh-12rem)] flex flex-wrap;
-}
-.rich-text{
-@apply w-[50%] flex flex-col justify-center;
-}
-.about-dots{
-@apply w-[50%] h-[2rem];
+<!-- eslint-disable no-tabs -->
+<style lang="postcss" scoped>
+.about-section {
+	@apply flex flex-col gap-[5rem] mt-[5rem] mb-[5rem];
+	.row-wrap {
+		@apply w-[100%] flex justify-between p-[2rem];
+		@apply border-l-[1px] border-solid border-white;
+		&.reverse{
+			@apply border-l-[0] border-r-[1px] border-solid border-white;
+		}
+		.rich-text {
+			@apply w-[100%] max-w-[21.5rem] flex flex-col justify-center;
+		}
+		.square-dots {
+			@apply w-[100%] max-w-[21.5rem] fill-lightGrey;
+		}
+	}
 }
 </style>

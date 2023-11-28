@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import TagFilter from '../BlogSection/TagFilter.vue'
+import ArticleList from '../BlogSection/ArticleList.vue'
+import BlogPagination from '../BlogSection/BlogPagination.vue'
 import { BlogQuery } from '~~/src/assets/queries'
 import type { Blog } from '~~/src/assets/types'
 
@@ -59,26 +62,27 @@ function updatePage(value: number) {
 
 <template>
   <section class="blog-section">
+    <TagFilter
+      :article-tags="data!.articleTags"
+      :active-tag="activeTag"
+      @update-tag="updateTag"
+    />
     <template v-if="data && !pending">
-      <TagFilter
-        :article-tags="data.articleTags"
-        :active-tag="activeTag"
-        @update-tag="updateTag"
-      />
       <ArticleList :data="data.articleList" />
-      <BlogPagination
-        :article-total="data.articleTotal"
-        :active-page="activePage"
-        :page-size="pageSize"
-        @update-page="updatePage"
-      />
     </template>
+    <BlogPagination
+      :article-total="data!.articleTotal"
+      :active-page="activePage"
+      :page-size="pageSize"
+      @update-page="updatePage"
+    />
   </section>
 </template>
 
-<style>
+<!-- eslint-disable no-tabs -->
+<style lang="postcss" scoped>
 .blog-section{
-@apply w-full max-w-section h-[calc(100vh-12rem)];
-@apply flex flex-col justify-between items-center;
+	@apply w-full max-w-section h-[calc(100vh-12rem)];
+	@apply flex flex-col justify-between items-center;
 }
 </style>

@@ -38,9 +38,10 @@ defineEmits<{
   </ul>
 </template>
 
-<style>
+<!-- eslint-disable no-tabs -->
+<style lang="postcss" scoped>
 .filter{
-@apply w-full h-auto;
-@apply flex;
+	@apply w-full h-auto;
+	@apply flex;
 }
 </style>

@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // ssr: false,
   devtools: { enabled: true },
   srcDir: 'src',
   typescript: {
@@ -7,10 +8,17 @@ export default defineNuxtConfig({
     typeCheck: false,
     shim: false,
   },
+  postcss: {
+    plugins: {
+      'postcss-import': {},
+      'tailwindcss/nesting': {},
+      'tailwindcss': {},
+      'autoprefixer': {},
+    },
+  },
   components: {
     dirs: [
       { path: '~/components/App', global: true, pathPrefix: false },
-      { path: '~/components/SanityBlocks', global: true, pathPrefix: false },
     ],
   },
   app: {
@@ -23,16 +31,16 @@ export default defineNuxtConfig({
     '@nuxtjs/sanity',
     '@nuxt/image',
   ],
-  image: {
-    sanity: {
-      projectId: '00y851a9',
-    },
-  },
   sanity: {
     projectId: '00y851a9',
     dataset: 'production',
     minimal: true,
     apiVersion: '2023-01-01',
+  },
+  image: {
+    sanity: {
+      projectId: '00y851a9',
+    },
   },
   nitro: {
     prerender: {

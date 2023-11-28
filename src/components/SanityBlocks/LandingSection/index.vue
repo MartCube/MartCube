@@ -8,8 +8,9 @@
   </section>
 </template>
 
-<style>
+<!-- eslint-disable no-tabs -->
+<style lang="postcss" scoped>
 .landing-section{
-@apply h-[calc(100vh-12rem)] flex justify-center items-center;
+	@apply h-[calc(100vh-12rem)] flex justify-center items-center;
 }
 </style>
