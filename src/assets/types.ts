@@ -36,11 +36,7 @@ export interface Article {
   tag: string
   publishedAt: string
   content: any[]
-  metaTags: {
-    title: string
-    description: string
-    image: string
-  }
+  metaTags: MetaTags
 }
 export interface Project {
   title: string

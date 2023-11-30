@@ -41,7 +41,19 @@ defineEmits<{
 <!-- eslint-disable no-tabs -->
 <style lang="postcss" scoped>
 .filter{
-	@apply w-full h-auto;
-	@apply flex;
+	@apply w-full h-auto p-[1rem];
+	@apply flex gap-[1rem];
+	.tag{
+		@apply capitalize;
+		em{
+			@apply text-white;
+		}
+		&.active em{
+			@apply text-primary;
+		}
+		&:hover{
+			@apply text-primary;
+		}
+	}
 }
 </style>

@@ -122,7 +122,7 @@ header {
 			}
 
 			&:last-child{
-				@apply pl-[1rem];
+				@apply pl-[1rem] text-primary;
 				&::after{
 					@apply hidden;
 				}

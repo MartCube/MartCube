@@ -25,10 +25,7 @@ function next() {
 
 <template>
   <ul class="pagination">
-    <li
-      class="prev" :class="[{ disabled: activePage <= 1 }]"
-      @click="prev()"
-    >
+    <li class="prev" :class="[{ disabled: activePage <= 1 }]" @click="prev()">
       <NuxtLink :to="`/blog?page=${activePage - 1}`" rel="prev">
         back
       </NuxtLink>
@@ -47,10 +44,7 @@ function next() {
         </li>
       </ul>
     </li>
-    <li
-      class="next" :class="[{ disabled: activePage >= pageCount }]"
-      @click="next()"
-    >
+    <li class="next" :class="[{ disabled: activePage >= pageCount }]" @click="next()">
       <NuxtLink :to="`/blog?page=${activePage + 1}`" rel="next">
         next
       </NuxtLink>
@@ -61,22 +55,46 @@ function next() {
 <!-- eslint-disable no-tabs -->
 <style lang="postcss" scoped>
 .pagination {
-	@apply w-full h-auto;
-	@apply flex justify-between;
-}
-.pagination-list {
-	@apply w-full max-w-[15%];
-}
-.pagination-list ul {
-	@apply w-full flex justify-between;
-}
-.pagination-list ul .active{
-	@apply text-primary;
-}
-.pagination .prev.disabled a {
-	@apply opacity-50 cursor-default pointer-events-none;
-}
-.pagination .next.disabled a {
-	@apply opacity-50 cursor-default pointer-events-none;
+	@apply w-full h-auto  p-[1rem];
+	@apply flex justify-between items-center;
+
+	.pagination-list {
+		@apply w-full max-w-[50%];
+		ul {
+			@apply w-full flex justify-center;
+			.pagination-page{
+				@apply p-[1rem] cursor-pointer;
+				&.active{
+					@apply text-primary;
+				}
+				&:hover{
+					@apply text-primary;
+				}
+			}
+		}
+	}
+
+	.prev,
+	.next {
+		@apply flex flex-col ;
+		&::after{
+			@apply  content-['']  w-full h-[1px]  bg-primary;
+		}
+		a{
+			@apply capitalize;
+			&:hover{
+				@apply text-primary;
+			}
+		}
+		&.disabled  {
+			&::after{
+				@apply hidden;
+			}
+			a{
+				@apply opacity-50 cursor-default pointer-events-none;
+			}
+		}
+	}
+
 }
 </style>

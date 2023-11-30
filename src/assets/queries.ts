@@ -33,11 +33,11 @@ export const ArticleQuery = groq`*[_type == "article" && uid.current == $uid][0]
 		// _type == 'gallery' => { _key, _type, "images": images[].asset._ref },
 		// _type == 'youtube' => { ... },
 	},
-	// metaTags {
-	// 	title,
-	// 	description,
-	// 	'image': image.asset._ref,
-	// }
+	"metaTags"{
+		title,
+		description,
+		"image": image.asset._ref,
+	}
 }`
 
 // Blog - $activeTag $from $to
