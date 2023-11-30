@@ -19,7 +19,7 @@ if (!data.value) {
   })
 }
 
-// useMetaTags(data.value.metaTags)
+useMetaTags(data.value.metaTags)
 </script>
 
 <template>
