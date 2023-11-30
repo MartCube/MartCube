@@ -23,6 +23,28 @@ defineProps<{
 <style lang="scss">
 .image {
 	display: flex;
-	position: relative;
+
+	img {
+		width: 100%;
+		height: inherit;
+		object-fit: inherit;
+
+		outline: none;
+		border: none;
+		// opacity: 0;
+		// image transition
+		// &[lazy=loading] {
+		// 	opacity: 0;
+		// }
+
+		// &[lazy=error] {
+		// 	opacity: 0;
+		// }
+
+		// &[lazy=loaded] {
+		// 	opacity: 1;
+		// 	transition: all 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+		// }
+	}
 }
 </style>

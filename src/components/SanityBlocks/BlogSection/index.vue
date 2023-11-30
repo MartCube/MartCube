@@ -23,7 +23,7 @@ const params = ref({
 
 // fetch data
 const { fetch } = useSanity()
-const { data, pending, refresh } = await useAsyncData(
+const { data, refresh } = await useAsyncData(
   'blog articles',
   () => fetch<Blog>(
     BlogQuery,
@@ -67,9 +67,7 @@ function updatePage(value: number) {
       :active-tag="activeTag"
       @update-tag="updateTag"
     />
-    <template v-if="data && !pending">
-      <ArticleList :data="data.articleList" />
-    </template>
+    <ArticleList :data="data!.articleList" />
     <BlogPagination
       :article-total="data!.articleTotal"
       :active-page="activePage"
@@ -82,7 +80,7 @@ function updatePage(value: number) {
 <!-- eslint-disable no-tabs -->
 <style lang="postcss" scoped>
 .blog-section{
-	@apply w-full max-w-section h-[calc(100vh-12rem)];
-	@apply flex flex-col justify-between items-center;
+	@apply w-full max-w-section h-auto;
+	@apply flex flex-col justify-between items-center gap-[2rem];
 }
 </style>

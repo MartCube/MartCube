@@ -18,7 +18,7 @@ defineProps<{
 <!-- eslint-disable no-tabs -->
 <style lang="postcss" scoped>
 .article-list{
-	@apply w-full h-auto;
-	@apply flex justify-evenly;
+	@apply w-full h-[24rem] p-[1rem];
+	@apply flex justify-between;
 }
 </style>
