@@ -23,7 +23,7 @@ const params = ref({
 
 // fetch data
 const { fetch } = useSanity()
-const { data, refresh } = await useAsyncData(
+const { data } = await useAsyncData(
   'blog articles',
   () => fetch<Blog>(
     BlogQuery,
@@ -31,7 +31,14 @@ const { data, refresh } = await useAsyncData(
       activeTag: activeTag.value,
       from: params.value.from,
       to: params.value.to,
-    }),
+    },
+  ),
+  {
+    watch: [
+      activeTag,
+      activePage,
+    ],
+  },
 )
 // handle error
 if (!data.value) {
@@ -47,16 +54,12 @@ function updateTag(value: string) {
   // reset pagination
   activePage.value = 1
   params.value = { from: 0, to: 2 }
-  // refetch
-  refresh()
 }
 function updatePage(value: number) {
   activePage.value = value
   // update params
   params.value.from = activePage.value * pageSize - pageSize
   params.value.to = activePage.value * pageSize
-  // refetch
-  refresh()
 }
 </script>
 
