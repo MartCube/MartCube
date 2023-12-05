@@ -26,7 +26,6 @@ if (!data.value) {
   <section class="article">
     <template v-if="data && !pending">
       {{ data.title }}
-      {{ data.publishedAt }}
     </template>
   </section>
 </template>
