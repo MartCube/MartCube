@@ -21,6 +21,7 @@ function scrollToTop() {
   </footer>
 </template>
 
+<!-- eslint-disable no-tabs -->
 <style>
 footer {
 	@apply w-full h-[6rem] max-w-section;
