@@ -23,7 +23,6 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
-    head: { link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }] },
   },
   modules: [
     '@pinia/nuxt',
@@ -45,7 +44,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      // routes: ['/sitemap.xml']
+      routes: ['/sitemap.xml'],
     },
   },
   experimental: {

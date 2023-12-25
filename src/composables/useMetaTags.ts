@@ -12,6 +12,7 @@ export default (data: MetaTags) => {
   useHead({
     title: data.title,
     htmlAttrs: { lang: 'en' },
+    link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
   })
 
   useSeoMeta({

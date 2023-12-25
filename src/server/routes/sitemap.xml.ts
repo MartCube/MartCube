@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   const client = createClient(useSanity().config)
   // fetch
   const routes: Sitemap[] = await client.fetch(SitemapQuery)
-  const sitemap = new SitemapStream({ hostname: 'https://skymacedonia.netlify.app' })
+  const sitemap = new SitemapStream({ hostname: 'https://martcube.netlify.app' })
   routes.forEach((route) => {
     sitemap.write({
       url: route.url,

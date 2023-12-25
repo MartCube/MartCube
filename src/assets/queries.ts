@@ -33,7 +33,7 @@ export const ArticleQuery = groq`*[_type == "article" && uid.current == $uid][0]
 		// _type == 'gallery' => { _key, _type, "images": images[].asset._ref },
 		// _type == 'youtube' => { ... },
 	},
-	"metaTags"{
+	metaTags {
 		title,
 		description,
 		"image": image.asset._ref,
@@ -58,13 +58,13 @@ export const SitemapQuery = groq`*[ _type in ["page", "article"] ]{
  	_type == "page"  => {
 		"url": "/" + uid.current + "/",
 		"changefreq": "monthly",
-		"priority": sitemap.priority,
+		"priority": sitePriority,
 		"lastmod" :_updatedAt,
 	},
 	_type == "article"  => {
 		"url": "/blog/" + uid.current + "/",
 		"changefreq": "monthly",
-		"priority": sitemap.priority,
+		"priority": sitePriority,
 		"lastmod" :_updatedAt,
 	},
 }`
