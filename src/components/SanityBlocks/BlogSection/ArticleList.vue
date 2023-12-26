@@ -18,7 +18,20 @@ defineProps<{
 <!-- eslint-disable no-tabs -->
 <style lang="postcss" scoped>
 .article-list{
-	@apply w-full h-[24rem] p-[1rem];
-	@apply flex justify-between;
+	@apply w-full h-[20rem];
+	@apply flex justify-around relative;
+	&::before{
+		position: absolute;
+		aspect-ratio: 1 / 1;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background-size: 10rem 10rem;
+		background-image: url(/bg-grid.png);
+		background-position-y: -11px;
+		background-position-x: -13px;
+		z-index: -1;
+		mask-image: linear-gradient(to bottom,white,transparent);
+	}
 }
 </style>

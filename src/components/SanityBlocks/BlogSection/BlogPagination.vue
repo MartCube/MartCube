@@ -55,7 +55,7 @@ function next() {
 <!-- eslint-disable no-tabs -->
 <style lang="postcss" scoped>
 .pagination {
-	@apply w-full h-auto;
+	@apply w-full h-[4rem];
 	@apply flex justify-between items-center;
 
 	.pagination-list {

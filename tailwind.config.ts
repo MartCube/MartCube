@@ -52,7 +52,7 @@ export default <Partial<Config>>{
         '10%': '10%',
       },
       maxWidth: {
-        section: '52rem',
+        section: '60rem',
       },
     },
   },

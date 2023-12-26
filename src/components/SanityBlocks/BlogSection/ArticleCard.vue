@@ -32,13 +32,16 @@ const newDate = formatter.format(date).replace(',', ' - ')
 <!-- eslint-disable no-tabs -->
 <style lang="postcss" scoped>
 .article-card{
-	@apply w-[20rem] h-[24rem] flex flex-col ;
+	@apply w-[16rem] h-[20rem] flex flex-col ;
 	.poster{
-		@apply w-[20rem] h-[12rem] object-cover;
+		@apply w-[16rem] h-[10rem] object-cover;
 	}
 	.card-info{
 		@apply h-[12rem] bg-dark2 pt-[1rem] pb-[1rem] pl-[2rem] pr-[2rem];
 		@apply flex flex-col justify-around;
+		h3{
+			@apply text-[1.5rem]
+		}
 		.card-meta{
 			@apply flex gap-[1rem];
 		}

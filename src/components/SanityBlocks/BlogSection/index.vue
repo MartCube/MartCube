@@ -6,7 +6,7 @@ import { BlogQuery } from '~~/src/assets/queries'
 import type { Blog } from '~~/src/assets/types'
 
 // State
-const pageSize = 2
+const pageSize = 3
 const { query } = useRoute()
 const activeTag = ref('all')
 const activePage = ref(1)
@@ -53,7 +53,7 @@ function updateTag(value: string) {
   activeTag.value = value
   // reset pagination
   activePage.value = 1
-  params.value = { from: 0, to: 2 }
+  params.value = { from: 0, to: 3 }
 }
 function updatePage(value: number) {
   activePage.value = value
@@ -84,6 +84,6 @@ function updatePage(value: number) {
 <style lang="postcss" scoped>
 .blog-section{
 	@apply w-full max-w-section h-auto;
-	@apply flex flex-col justify-between items-center gap-[2rem];
+	@apply flex flex-col gap-[2rem];
 }
 </style>
