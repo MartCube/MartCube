@@ -16,7 +16,6 @@ defineProps<{
 
 <template>
   <section class="contact-section">
-    <ContactDots class="contact-dots" />
     <ContactForm :data="contactForm" />
   </section>
 </template>
@@ -24,9 +23,20 @@ defineProps<{
 <!-- eslint-disable no-tabs -->
 <style lang="postcss" scoped>
 .contact-section{
-	@apply flex justify-between items-center mt-[1rem] mb-[1rem];
-	.contact-dots{
-		@apply w-[100%] h-auto fill-lightGrey
+	@apply w-full max-w-section h-auto relative;
+	@apply flex justify-between items-center;
+	&::before{
+		position: absolute;
+		aspect-ratio: 1 / 1;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background-size: 10rem 10rem;
+		background-image: url(/bg-grid.png);
+		background-position-y: -12px;
+		background-position-x: 11px;
+		z-index: -1;
+		mask-image: linear-gradient(to right,transparent, white );
 	}
 
 }

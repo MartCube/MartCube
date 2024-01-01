@@ -112,7 +112,7 @@ header {
 		@apply flex justify-center items-center;
 		a{
 			@apply text-subtitle capitalize;
-			@apply flex justify-center items-center gap-[1rem];
+			@apply flex justify-center items-center gap-[1.5rem];
 			&:first-child::before{
 				@apply content-[''] w-[1px] h-[2rem] bg-white;
 			}

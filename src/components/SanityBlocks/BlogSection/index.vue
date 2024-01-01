@@ -83,7 +83,20 @@ function updatePage(value: number) {
 <!-- eslint-disable no-tabs -->
 <style lang="postcss" scoped>
 .blog-section{
-	@apply w-full max-w-section h-auto;
+	@apply w-full max-w-section h-auto relative;
 	@apply flex flex-col gap-[2rem];
+	&::before{
+		position: absolute;
+		aspect-ratio: 1 / 1;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background-size: 10rem 10rem;
+		background-image: url(/bg-grid.png);
+		background-position-y: -12px;
+		background-position-x: 11px;
+		z-index: -1;
+		mask-image: linear-gradient(to top,transparent, white, transparent );
+	}
 }
 </style>

@@ -55,11 +55,11 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
 
 <style>
 form{
-@apply w-full max-w-[26rem] h-[600px] p-[2rem];
-@apply flex flex-col justify-center gap-[3rem]
+@apply w-full max-w-[24.4rem] h-[600px] pl-[1.5rem];
+@apply flex flex-col justify-center gap-[3.5rem]
 }
 form .submit{
-@apply w-full h-[2rem];
+@apply w-full h-[3rem];
 @apply border-l-[1px] border-r-[1px] border-solid border-white;
 }
 </style>
