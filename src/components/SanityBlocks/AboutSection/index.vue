@@ -14,10 +14,8 @@ defineProps<{
         class="rich-text"
         :data="aboutText"
       />
-      <SquareDots class="square-dots" />
     </div>
     <div class="row-wrap reverse">
-      <SquareDots class="square-dots" />
       <AppRichText
         class="rich-text"
         :data="contactText"
@@ -31,17 +29,30 @@ defineProps<{
 .about-section {
 	@apply flex flex-col gap-[5rem] mt-[5rem] mb-[5rem];
 	.row-wrap {
-		@apply w-[100%] flex justify-between p-[2rem];
-		@apply border-l-[1px] border-solid border-white;
+		@apply w-[100%] h-[21rem] flex justify-between ;
+		@apply border-l-[1px] border-solid border-white relative;
+
+		&::before{
+			position: absolute;
+			aspect-ratio: 1 / 1;
+			width: 100%;
+			height: 100%;
+			content: "";
+			background-size: 10rem 10rem;
+			background-image: url(/bg-grid.png);
+			background-position-y: -12px;
+			background-position-x: 11px;
+			z-index: -1;
+			mask-image: linear-gradient(to bottom,transparent, white, transparent );
+		}
 		&.reverse{
-			@apply border-l-[0] border-r-[1px] border-solid border-white;
+			@apply justify-end border-l-[0] border-r-[1px] border-solid border-white;
 		}
 		.rich-text {
-			@apply w-[100%] max-w-[21.5rem] flex flex-col justify-center;
+			@apply w-[100%] max-w-[30rem] p-[5rem];
+			@apply flex flex-col justify-center;
 		}
-		.square-dots {
-			@apply w-[100%] max-w-[21.5rem] fill-lightGrey;
-		}
+	
 	}
 }
 </style>

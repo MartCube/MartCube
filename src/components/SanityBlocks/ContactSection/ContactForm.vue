@@ -53,13 +53,14 @@ const onSubmit = handleSubmit(async (values, { resetForm }) => {
   </form>
 </template>
 
-<style>
+<!-- eslint-disable no-tabs -->
+<style lang="postcss" scoped>
 form{
-@apply w-full max-w-[24.4rem] h-[600px] pl-[1.5rem];
-@apply flex flex-col justify-center gap-[3.5rem]
+	@apply w-full max-w-[24.4rem] pl-[1.5rem];
+	@apply flex flex-col justify-center gap-[3.5rem]
 }
 form .submit{
-@apply w-full h-[3rem];
-@apply border-l-[1px] border-r-[1px] border-solid border-white;
+	@apply w-full h-[3rem];
+	@apply border-l-[1px] border-r-[1px] border-solid border-white;
 }
 </style>
