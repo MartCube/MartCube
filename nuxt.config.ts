@@ -47,7 +47,7 @@ export default defineNuxtConfig({
       routes: ['/sitemap.xml'],
     },
   },
-  experimental: {
-    componentIslands: true,
-  },
+  // experimental: {
+  //   componentIslands: true,
+  // },
 })
