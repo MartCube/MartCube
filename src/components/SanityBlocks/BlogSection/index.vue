@@ -7,7 +7,7 @@ import type { Blog } from '~~/src/assets/types'
 // fetch data
 const activeTag = ref('all')
 const { fetch } = useSanity()
-const { data, pending } = await useLazyAsyncData(
+const { data, status } = await useLazyAsyncData(
   'blog articles',
   () =>
     fetch<Blog>(BlogQuery, {
@@ -18,7 +18,7 @@ const { data, pending } = await useLazyAsyncData(
   },
 )
 // handle error
-if (!pending && !data.value) {
+if (status.value !== 'idle' && !data.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Blog Not Found',
@@ -38,7 +38,7 @@ function updateTag(value: string) {
       :active-tag="activeTag"
       @update-tag="updateTag"
     />
-    <template v-if="data && !pending">
+    <template v-if="data && status !== 'pending'">
       <ArticleList :data="data.articleList" />
     </template>
   </section>

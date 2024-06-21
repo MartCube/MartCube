@@ -5,13 +5,13 @@ import type { Article } from '~~/src/assets/types'
 // fetch data
 const { params } = useRoute('blog-article')
 const { fetch } = useSanity()
-const { data, pending } = await useLazyAsyncData(
+const { data, status } = await useLazyAsyncData(
   `article page ${params.article}`,
   () => fetch<Article>(ArticleQuery, { uid: params.article }),
 )
 
 // handle error
-if (!pending && !data.value) {
+if (status.value !== 'idle' && !data.value) {
   throw createError({
     statusCode: 404,
     statusMessage: `Article Not Found`,
@@ -24,10 +24,10 @@ if (!pending && !data.value) {
 
 <template>
   <div>
-    <template v-if="data && !pending">
-      <h2>{{ data?.title }}</h2>
-      <p>{{ data?.tag }}</p>
-      <p>Time to read:{{ data?.readingTime }}min</p>
+    <template v-if="data && status !== 'pending'">
+      <h2>{{ data.title }}</h2>
+      <p>{{ data.tag }}</p>
+      <p>Time to read:{{ data.readingTime }}min</p>
     </template>
   </div>
 </template>
