@@ -1,0 +1,22 @@
+* {
+	--uno: m-0 p-0 box-border outline-none;
+}
+
+*::selection{
+	--uno: bg-primary text-dark;
+}
+
+html {
+	--uno: bg-dark scroll-smooth;
+}
+body {	
+	--uno: text-cream  font-fira antialiased;
+}
+
+a, p, span{
+	--uno: text-base text-cream decoration-none;
+}
+
+ul, li {
+	list-style: none;
+}
