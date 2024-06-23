@@ -5,6 +5,7 @@ import {
   presetAttributify,
   presetWebFonts,
   presetIcons,
+  transformerVariantGroup,
 } from 'unocss'
 
 import transformerDirectives from '@unocss/transformer-directives'
@@ -17,7 +18,7 @@ export default defineConfig({
       provider: 'google',
       fonts: {
         // roboto: 'Roboto Flex:400,500,600',
-        fira: 'Fira Code:400,500,600',
+        fira: 'Fira Code:300,400,500',
       },
     }),
     presetIcons({
@@ -50,6 +51,7 @@ export default defineConfig({
     'test': 'border-solid border-0.5 border-white',
     'text-m': 'text-[1.25rem] leading-[1.5rem]',
     'text-l': 'text-[1.5rem] leading-[2rem]',
+    'text-xl': 'text-[2.5rem] leading-[3rem]',
     'disabled': 'opacity-50 cursor-default pointer-events-none',
     'transition-350': 'transition duration-350 ease',
   },
@@ -87,5 +89,6 @@ export default defineConfig({
     transformerDirectives({
       applyVariable: ['--uno'],
     }),
+    transformerVariantGroup(),
   ],
 })

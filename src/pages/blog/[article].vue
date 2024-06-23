@@ -19,15 +19,37 @@ if (status.value !== 'idle' && !data.value) {
   })
 }
 
-// if (data.value)useMetaTags(data.value.metaTags)
+if (data.value)useMetaTags(data.value.metaTags)
 </script>
 
 <template>
-  <div>
+  <main class="w-full flex justify-center px-[20%] pt-[2rem]">
     <template v-if="data && status !== 'pending'">
-      <h2>{{ data.title }}</h2>
-      <p>{{ data.tag }}</p>
-      <p>Time to read:{{ data.readingTime }}min</p>
+      <article class="mb-[10rem] w-full flex flex-col gap-[2rem]">
+        <div class="relative h-0 w-inherit overflow-hidden pb-[56.25%]">
+          <NuxtImg
+            class="absolute left-0 top-0 h-full w-full object-cover"
+            :src="data.poster"
+            width="1280"
+            height="720"
+            fit="max"
+            provider="sanity"
+          />
+        </div>
+        <h1 class="relative w-fit pb-[2rem] text-xl font-thin">
+          {{ data.title }}
+          <span class="absolute bottom-0 left-0 h-[1px] w-full bg-primary" />
+        </h1>
+
+        <AppRichText :data="data.content" />
+      </article>
     </template>
-  </div>
+  </main>
 </template>
+
+<!-- image block should look like this
+<figure>
+<img src="image.jpg" alt="Description of image">
+<figcaption>This is the image caption.</figcaption>
+</figure>
+-->
