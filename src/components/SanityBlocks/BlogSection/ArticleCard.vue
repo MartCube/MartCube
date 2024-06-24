@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import type { Article } from '~~/src/assets/types'
 
-const props = defineProps<{
+defineProps<{
   data: Article
 }>()
 
-const formatter = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: 'numeric' })
-const newDate = formatter.format(new Date(props.data.publishedAt)).replace(',', ' - ')
+const { formatDate } = useDateFormatter()
 </script>
 
 <template>
@@ -22,13 +21,13 @@ const newDate = formatter.format(new Date(props.data.publishedAt)).replace(',', 
       fit="max"
     />
     <div class="flex flex-col gap-2 py-[1rem]">
-      <p>{{ newDate }}</p>
+      <p>{{ formatDate(data.publishedAt) }}</p>
       <h4 class="text-l font-normal transition-350 2lines group-hover:text-primary">
         {{ data.title }}
       </h4>
       <div class="flex gap-8">
-        <span># {{ data.tag }}</span>
-        <span>{{ data.readingTime }} min</span>
+        <span>#{{ data.tag }}</span>
+        <span>{{ data.readingTime }}min</span>
       </div>
     </div>
   </NuxtLink>
