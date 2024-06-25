@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import ArticleContent from '~/components/SanityBlocks/ArticleSection/ArticleContent.vue'
 import { ArticleQuery } from '~~/src/assets/queries'
 import type { Article } from '~~/src/assets/types'
 
@@ -49,7 +50,7 @@ const { formatDate } = useDateFormatter()
           <span>{{ data.readingTime }}min</span>
         </p>
         <!-- content -->
-        <AppRichText :data="data.content" />
+        <ArticleContent :content="data.content" />
       </article>
     </template>
   </main>

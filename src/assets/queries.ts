@@ -27,6 +27,8 @@ export const ArticleQuery = groq`*[_type == "article" && uid.current == $uid][0]
 	"readingTime": string(round(length(pt::text(content)) / 5 / 180 ) + 1),
 	content[] {
 		_type == 'block' => { ... },
+		_type == 'image' => { 'src': asset._ref, _key, _type },
+		_type == 'youtube' => { ... },
 	},
 	metaTags {
 		title,
