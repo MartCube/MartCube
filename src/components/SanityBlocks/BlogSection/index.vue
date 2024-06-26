@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TagFilter from '../BlogSection/TagFilter.vue'
-import ArticleList from '../BlogSection/ArticleList.vue'
+import TagFilter from './TagFilter.vue'
+import ArticleList from './ArticleList.vue'
 import { BlogQuery } from '~~/src/assets/queries'
 import type { Blog } from '~~/src/assets/types'
 

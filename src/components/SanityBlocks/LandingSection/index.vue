@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
+import AppLogo from './AppLogo.vue'
 
 const source = ref('martingjorceski@gmail.com')
 const { copy, copied } = useClipboard({ source })

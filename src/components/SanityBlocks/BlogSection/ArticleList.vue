@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ArticleCard from '../BlogSection/ArticleCard.vue'
+import ArticleCard from './ArticleCard.vue'
 import type { Article } from '~~/src/assets/types'
 
 defineProps<{

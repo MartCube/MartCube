@@ -17,9 +17,9 @@ defineEmits<{ (e: 'updateTag', tag: string): void }>()
       <NuxtLink
         :to="{ path: '/blog', query: { tag: item } }"
         rel="noindex fallow"
-        class="py-4 transition-350 hover:text-primary"
+        class="py-4 capitalize transition-350 hover:text-primary"
       >
-        <em :class="[{ 'text-primary': activeTag === item }]">#</em> {{ item }}
+        <span :class="[{ 'text-primary': activeTag === item }]">#</span>{{ item }}
       </NuxtLink>
     </li>
   </ul>

@@ -22,6 +22,7 @@ const linksRef = ref<HTMLElement | null>(null)
 onClickOutside(linksRef, () => (menuValue.value = false))
 </script>
 
+<!-- exactActiveClass -->
 <template>
   <header
     class="h-[6rem] w-full px-[20%] py-[1rem]"
@@ -57,3 +58,7 @@ onClickOutside(linksRef, () => (menuValue.value = false))
     </div>
   </header>
 </template>
+
+<style>
+
+</style>

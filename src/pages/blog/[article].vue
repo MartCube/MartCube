@@ -46,7 +46,7 @@ const { formatDate } = useDateFormatter()
         <!-- info -->
         <p class="flex gap-[2rem]">
           <span> {{ formatDate(data.publishedAt) }}</span>
-          <span> <span class="text-primary">#</span>{{ data.tag }}</span>
+          <span class="capitalize"> <span class="text-primary">#</span>{{ data.tag }}</span>
           <span>{{ data.readingTime }}min</span>
         </p>
         <!-- content -->

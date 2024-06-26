@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import youtube from '../ArticleSection/YoutubeBlock.vue'
-import image from '../ArticleSection/ImageBlock.vue'
+import youtube from './YoutubeBlock.vue'
+import image from './ImageBlock.vue'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 defineProps<{ content: any }>()
