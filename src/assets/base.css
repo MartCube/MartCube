@@ -13,8 +13,16 @@ body {
 	--uno: text-cream  font-fira antialiased;
 }
 
+article h2 {
+	--uno: text-subtitle underline decoration-1 underline-primary underline-offset-16 mb-1rem;
+}
+
 a, p, span{
 	--uno: text-base text-cream decoration-none;
+}
+
+em {
+	font-style: normal;
 }
 
 ul, li {

@@ -5,6 +5,7 @@ import {
   presetAttributify,
   presetWebFonts,
   presetIcons,
+  presetTypography,
   transformerVariantGroup,
 } from 'unocss'
 
@@ -34,9 +35,11 @@ export default defineConfig({
       },
       prefix: 'i-',
       extraProperties: {
-        // 'display': 'inline-block',
+        'display': 'inline-block',
+        'vertical-align': 'middle',
       },
     }),
+    presetTypography(),
   ],
   rules: [
     [
@@ -66,20 +69,25 @@ export default defineConfig({
       error: '#ff3333',
     },
     fontSize: {
-      base: ['1rem', {
-        lineHeight: '1.25rem',
-        letterSpacing: '0',
-        fontWeight: '400',
+      small: ['1rem', {
+        'line-height': '1.5rem',
+        'letter-spacing': '0',
+        'font-weight': '400',
       }],
-      subtitle: ['1.5rem', {
-        lineHeight: '1.75rem',
-        letterSpacing: '0',
-        fontWeight: '300',
+      base: ['1.25rem', {
+        'line-height': '2rem',
+        'letter-spacing': '0',
+        'font-weight': '400',
+      }],
+      subtitle: ['1.75rem', {
+        'line-height': '2.25rem',
+        'letter-spacing': '0.05rem',
+        'font-weight': '300',
       }],
       title: ['2rem', {
-        lineHeight: '2.25rem',
-        letterSpacing: '0.1rem',
-        fontWeight: '300',
+        'line-height': '2.5rem',
+        'letter-spacing': '0.1rem',
+        'font-weight': '500',
       }],
     },
     spacing: {

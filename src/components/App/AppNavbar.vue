@@ -39,7 +39,7 @@ onClickOutside(linksRef, () => (menuValue.value = false))
           @click="menuValue = false"
         >
           <NuxtLink
-            class="p-4 capitalize transition-350 hover:text-primary"
+            class="p-4 text-base capitalize transition-350 hover:text-primary"
             :class="{ 'pl-0': i==0 }"
             :to="link.value"
           >

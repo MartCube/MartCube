@@ -7,11 +7,11 @@ const { copy, copied } = useClipboard({ source })
 </script>
 
 <template>
-  <section class="[&>p]:w-fit [&>p]:flex [&>p]:items-center [&>p]:gap-1">
+  <section class="[&>p]:w-fit">
     <AppLogo class="mb-2rem" />
-    <p> <span class="i-icons-terminal" /> Hello world.</p>
+    <p> <em class="i-icons-terminal" /> Hello world.</p>
     <p>My name is Martin and I like to build cool things on the web. </p>
-    <p>I'm Nuxt<span class="i-icons-nuxt" /> enthusiast due to its exceptional developer experience.</p>
+    <p>I'm Nuxt <em class="i-icons-nuxt" /> enthusiast due to its exceptional developer experience.</p>
     <p>In my free time I love to fly, surf and mostly ski.</p>
 
     <NuxtLink

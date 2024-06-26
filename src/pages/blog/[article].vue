@@ -39,7 +39,7 @@ const { formatDate } = useDateFormatter()
           />
         </div>
         <!-- title -->
-        <h1 class="relative w-fit pb-[2rem] text-xl font-thin">
+        <h1 class="relative w-fit pb-[2rem] text-title">
           {{ data.title }}
           <span class="absolute bottom-0 left-0 h-[1px] w-full bg-primary" />
         </h1>

@@ -22,11 +22,13 @@ const { formatDate } = useDateFormatter()
       fit="max"
     />
     <div class="flex flex-col gap-2 py-[1rem]">
-      <p>{{ formatDate(data.publishedAt) }}</p>
-      <h4 class="text-l font-normal transition-350 2lines group-hover:text-primary">
+      <p class="text-small">
+        {{ formatDate(data.publishedAt) }}
+      </p>
+      <h3 class="text-subtitle transition-350 2lines group-hover:text-primary">
         {{ data.title }}
-      </h4>
-      <div class="flex gap-8 capitalize">
+      </h3>
+      <div class="[&>*]:text-small flex gap-8 capitalize">
         <span>#{{ data.tag }}</span>
         <span>{{ data.readingTime }}min</span>
       </div>
