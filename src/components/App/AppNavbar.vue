@@ -25,10 +25,13 @@ onClickOutside(linksRef, () => (menuValue.value = false))
 <!-- exactActiveClass -->
 <template>
   <header
-    class="h-[6rem] w-full px-[20%] py-[1rem]"
+    class="mx-auto h-[6rem] max-w-60rem w-90vw lg:w-full"
     flex="~ row items-center"
   >
-    <nav :class="{ show: menuValue }">
+    <nav
+      class="py-[1rem]"
+      :class="{ show: menuValue }"
+    >
       <ul
         ref="linksRef"
         class="w-full flex gap-2"
