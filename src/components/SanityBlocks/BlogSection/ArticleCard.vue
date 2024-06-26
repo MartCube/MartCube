@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Article } from '~~/src/assets/types'
+import AppImage from '~/components/App/AppImage.vue'
 
 defineProps<{
   data: Article

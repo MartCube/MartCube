@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { PageQuery } from '~~/src/assets/queries'
 import type { Page } from '~~/src/assets/types'
+import AppContent from '~/components/App/AppContent.vue'
 
 // fetch data
 const { params } = useRoute('page')

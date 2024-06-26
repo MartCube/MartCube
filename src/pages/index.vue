@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { PageQuery } from '~~/src/assets/queries'
 import type { Page } from '~~/src/assets/types'
+import AppContent from '~/components/App/AppContent.vue'
 
 // fetch data
 const { fetch } = useSanity()
-const { data, status } = await useLazyAsyncData('page landing', () =>
-  fetch<Page>(PageQuery, { uid: 'landing' }),
+const { data, status } = await useLazyAsyncData(
+  'page landing',
+  () => fetch<Page>(PageQuery, { uid: 'landing' }),
 )
 
 // handle error

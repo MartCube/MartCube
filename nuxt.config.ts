@@ -3,9 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   srcDir: 'src',
   css: ['~/assets/base.css'],
-  components: {
-    dirs: [{ path: '~/components/App', global: true, pathPrefix: false }],
-  },
   app: {
     head: {
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
