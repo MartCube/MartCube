@@ -24,9 +24,12 @@ const { formatDate } = useDateFormatter()
 </script>
 
 <template>
-  <main class="w-full flex justify-center px-[20%] pt-[2rem]">
+  <main
+    class="mx-auto max-w-60rem w-90vw w-full flex justify-center pt-[2rem]"
+    lg="lg:w-full"
+  >
     <template v-if="data && status !== 'pending'">
-      <article class="mb-[10rem] w-full flex flex-col gap-[2rem]">
+      <article class="mb-[2rem] w-full flex flex-col gap-[2rem]">
         <!-- poster -->
         <div class="relative h-0 w-inherit overflow-hidden pb-[56.25%]">
           <NuxtImg
@@ -44,7 +47,10 @@ const { formatDate } = useDateFormatter()
           <span class="absolute bottom-0 left-0 h-[1px] w-full bg-primary" />
         </h1>
         <!-- info -->
-        <p class="flex gap-[2rem]">
+        <p
+          class="flex gap-2rem [&>span]:text-small"
+          lg="lg:gap-1rem lg:[&>span]:text-base"
+        >
           <span> {{ formatDate(data.publishedAt) }}</span>
           <span class="capitalize"> <span class="text-primary">#</span>{{ data.tag }}</span>
           <span>{{ data.readingTime }}min</span>

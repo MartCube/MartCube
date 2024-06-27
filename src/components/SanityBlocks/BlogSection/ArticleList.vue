@@ -8,7 +8,10 @@ defineProps<{
 </script>
 
 <template>
-  <ul class="h-[20rem] w-full flex justify-between">
+  <ul
+    class="w-full flex flex-wrap justify-between gap-2rem"
+    lg="lg:flex-row gap-0"
+  >
     <li
       v-for="item in data"
       :key="item.uid"

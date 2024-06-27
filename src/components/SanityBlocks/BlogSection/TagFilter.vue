@@ -8,7 +8,7 @@ defineEmits<{ (e: 'updateTag', tag: string): void }>()
 </script>
 
 <template>
-  <ul class="w-full flex items-center gap-[2rem]">
+  <ul class="w-full flex flex-wrap items-center gap-[2rem]">
     <li
       v-for="item in articleTags"
       :key="item"
@@ -17,7 +17,7 @@ defineEmits<{ (e: 'updateTag', tag: string): void }>()
       <NuxtLink
         :to="{ path: '/blog', query: { tag: item } }"
         rel="noindex fallow"
-        class="text-small py-4 capitalize transition-350 hover:text-primary"
+        class="py-4 text-small capitalize transition-350 hover:text-primary"
       >
         <em :class="[{ 'text-primary': activeTag === item }]">#</em>{{ item }}
       </NuxtLink>

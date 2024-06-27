@@ -10,11 +10,12 @@ html {
 	--uno: bg-dark scroll-smooth;
 }
 body {	
-	--uno: text-cream  font-fira antialiased;
+	--uno: text-cream font-fira antialiased;
 }
 
 article h2 {
-	--uno: text-subtitle underline decoration-1 underline-primary underline-offset-16 mb-1rem;
+	--uno: text-subtitle pb-2 w-fit;
+	--uno: border-b-0.5 border-b-primary border-b-solid;
 }
 
 a, p, span{

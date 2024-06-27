@@ -7,7 +7,7 @@ const { copy, copied } = useClipboard({ source })
 
 <template>
   <footer
-    class="relative mx-auto max-w-60rem w-90vw pt-1rem lg:w-full"
+    class="relative mx-auto h-10svh max-w-60rem w-90vw lg:w-full"
     flex="~ justify-between"
     border="~ t-0.5 t-white t-solid"
   >

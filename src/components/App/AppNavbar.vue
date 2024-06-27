@@ -25,7 +25,7 @@ onClickOutside(linksRef, () => (menuValue.value = false))
 <!-- exactActiveClass -->
 <template>
   <header
-    class="mx-auto h-[6rem] max-w-60rem w-90vw lg:w-full"
+    class="mx-auto h-10svh max-w-60rem w-90vw lg:w-full"
     flex="~ row items-center"
   >
     <nav

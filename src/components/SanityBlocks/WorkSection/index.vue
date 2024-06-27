@@ -8,8 +8,8 @@ defineProps<{
 </script>
 
 <template>
-  <section class="">
-    <div class="border-l-0.5 border-l-white border-l-solid">
+  <section>
+    <div class="h-full flex flex-col gap-2rem border-l-0.5 border-l-white border-l-solid">
       <ProjectCard
         v-for="(project, index) in projects"
         :key="project.title"
