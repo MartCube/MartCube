@@ -24,7 +24,7 @@ if (data.value)useMetaTags(data.value.metaTags)
 </script>
 
 <template>
-  <div class="mx-auto max-w-60rem min-h-80svh w-90vw flex justify-center pb-4rem pt-2rem lg:w-full">
+  <div class="mx-auto max-w-60rem min-h-80svh w-90vw flex justify-center pb-2rem pt-2rem lg:w-full">
     <template v-if="data && status !== 'pending'">
       <AppContent :content="data.content" />
     </template>
