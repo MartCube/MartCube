@@ -28,7 +28,7 @@ const { formatDate } = useDateFormatter()
       <h3 class="text-subtitle transition-350 2lines group-hover:text-primary">
         {{ data.title }}
       </h3>
-      <div class="[&>*]:text-small flex gap-8 capitalize">
+      <div class="flex gap-8 capitalize [&>*]:text-small">
         <span>#{{ data.tag }}</span>
         <span>{{ data.readingTime }}min</span>
       </div>

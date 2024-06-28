@@ -2,7 +2,7 @@
 	--uno: m-0 p-0 box-border outline-none;
 }
 
-*::selection{
+:is(p, a, span, li, em, h1, h2, h3, h4)::selection {
 	--uno: bg-primary text-dark;
 }
 
@@ -11,11 +11,6 @@ html {
 }
 body {	
 	--uno: text-cream font-fira antialiased;
-}
-
-article h2 {
-	--uno: text-subtitle pb-2 w-fit;
-	--uno: border-b-0.5 border-b-primary border-b-solid;
 }
 
 a, p, span{
@@ -30,6 +25,64 @@ ul, li {
 	list-style: none;
 }
 
+/* ### Navbar ### */
 header nav a.router-link-exact-active{
 	--uno: text-primary;
+}	
+
+/* ### Article ### */
+article h2 {
+	--uno: text-subtitle pb-2 w-fit;
+	--uno: border-b-0.5 border-b-primary border-b-solid;
+}
+
+/* ### Page Transitions ### */
+/* .page-enter-active,
+.page-leave-active {
+	transition: all .25s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.page-enter-from,
+.page-leave {
+	opacity: 0;
+} */
+
+@keyframes slide-enter {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-enter {
+  animation: slide-enter 1s both;
+}
+
+.slide-enter:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.slide-enter:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.slide-enter:nth-child(3) {
+  animation-delay: 0.3s; 
+}
+
+.slide-enter:nth-child(4) {
+  animation-delay: 0.4s; 
+}
+
+.slide-enter:nth-child(5) {
+  animation-delay: 0.5s; 
+}
+
+.slide-enter:nth-child(6) {
+  animation-delay: 0.6s; 
 }

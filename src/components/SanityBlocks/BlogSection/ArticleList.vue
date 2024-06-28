@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <ul
-    class="w-full flex flex-wrap justify-between gap-2rem"
+    class="slide-enter w-full flex flex-wrap justify-between gap-2rem"
     lg="lg:flex-row gap-0"
   >
     <li

@@ -12,6 +12,7 @@ defineEmits<{ (e: 'updateTag', tag: string): void }>()
     <li
       v-for="item in articleTags"
       :key="item"
+      class="slide-enter"
       @click="$emit('updateTag', item)"
     >
       <NuxtLink
