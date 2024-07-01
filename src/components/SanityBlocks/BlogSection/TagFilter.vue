@@ -8,11 +8,10 @@ defineEmits<{ (e: 'updateTag', tag: string): void }>()
 </script>
 
 <template>
-  <ul class="w-full flex flex-wrap items-center gap-[2rem]">
+  <ul class="slide-enter w-full flex flex-wrap items-center gap-[2rem]">
     <li
       v-for="item in articleTags"
       :key="item"
-      class="slide-enter"
       @click="$emit('updateTag', item)"
     >
       <NuxtLink
