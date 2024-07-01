@@ -12,31 +12,46 @@ const { copy, copied } = useClipboard({ source })
     border="~ t-0.5 t-white t-solid"
   >
     <p class="text-small">
-      2024 <em class="i-icons-copyright mb-3px" /> All rights reserved
+      <em class="i-icons-copyright mb-3px" /> All rights reserved
     </p>
 
-    <ul class="flex gap-4">
-      <NuxtLink
-        to="/"
-        class="relative hover:text-primary"
-        @click="copy()"
-      >
-        <span
-          class="absolute bottom-[2] right-0 w-full text-small opacity-0 transition-350"
-          :class="[{ 'opacity-100 ': copied }]"
+    <ul class="flex gap-4 [&_a]:text-l [&_a:hover]:text-primary">
+      <li>
+        <button
+          class="cursor-pointer border-none bg-transparent text-l text-cream hover:text-primary"
+          aria-label="Copy Email"
+          @click="copy()"
         >
-          email copied
-        </span>
-        <span class="i-icons-email text-l" />
-      </NuxtLink>
-      <NuxtLink
-        to="https://github.com/MartCube"
-        target="_blank"
-        external
-        class="hover:text-primary"
-      >
-        <span class="i-icons-github text-l" />
-      </NuxtLink>
+          <em class="i-icons-email" />
+        </button>
+      </li>
+      <li>
+        <NuxtLink
+          to="https://github.com/MartCube"
+          aria-label="GitHub"
+          target="_blank"
+          external
+        >
+          <em class="i-icons-github" />
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          to="https://www.linkedin.com/in/martin-gjorcheski-737769104/"
+          aria-label="LinkedIn"
+          target="_blank"
+          external
+        >
+          <em class="i-icons-linkedin" />
+        </NuxtLink>
+      </li>
     </ul>
+
+    <span
+      class="absolute right-0 top-[-2rem] w-fit text-small opacity-0 transition-350"
+      :class="[{ 'opacity-100 ': copied }]"
+    >
+      email copied
+    </span>
   </footer>
 </template>

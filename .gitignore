@@ -25,3 +25,5 @@ logs
 
 # ToDo List
 todo.txt
+# Local Netlify folder
+.netlify

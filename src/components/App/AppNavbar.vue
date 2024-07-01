@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onClickOutside, useToggle } from '@vueuse/core'
+// import { onClickOutside, useToggle } from '@vueuse/core'
 import type { Link } from '~~/src/assets/types'
 
 const links: Link[] = [
@@ -17,9 +17,9 @@ const links: Link[] = [
     label: 'blog',
   },
 ]
-const [menuValue, menuToggle] = useToggle()
-const linksRef = ref<HTMLElement | null>(null)
-onClickOutside(linksRef, () => (menuValue.value = false))
+// const [menuValue, menuToggle] = useToggle()
+// const linksRef = ref<HTMLElement | null>(null)
+// onClickOutside(linksRef, () => (menuValue.value = false))
 </script>
 
 <!-- exactActiveClass -->
@@ -28,18 +28,18 @@ onClickOutside(linksRef, () => (menuValue.value = false))
     class="mx-auto h-10svh max-w-60rem w-90vw lg:w-full"
     flex="~ row items-center"
   >
+    <!-- :class="{ show: menuValue }" -->
     <nav
       class="py-[1rem]"
-      :class="{ show: menuValue }"
     >
       <ul
         ref="linksRef"
         class="w-full flex gap-2"
       >
+        <!-- @click="menuValue = false" -->
         <li
           v-for="(link, i) in links"
           :key="link.value"
-          @click="menuValue = false"
         >
           <NuxtLink
             class="p-4 text-base capitalize transition-350 hover:text-primary"
@@ -51,14 +51,14 @@ onClickOutside(linksRef, () => (menuValue.value = false))
         </li>
       </ul>
     </nav>
-    <div
+    <!-- <div
       class="menu"
       :class="[{ hide: menuValue }]"
       @click="menuToggle()"
     >
       <span class="bar" />
       <span class="bar" />
-    </div>
+    </div> -->
   </header>
 </template>
 
