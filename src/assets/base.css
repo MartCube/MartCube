@@ -60,31 +60,31 @@ article h2 {
 }
 
 .slide-enter {
-  animation: slide-enter 1s both;
+  animation: slide-enter 1s ease both;
 }
 
 .slide-enter:nth-child(1) {
-  animation-delay: 0.1s;
+  animation-delay: 0.15s;
 }
 
 .slide-enter:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: 0.3s;
 }
 
 .slide-enter:nth-child(3) {
-  animation-delay: 0.3s; 
+  animation-delay: 0.45s; 
 }
 
 .slide-enter:nth-child(4) {
-  animation-delay: 0.4s; 
+  animation-delay: 0.6s; 
 }
 
 .slide-enter:nth-child(5) {
-  animation-delay: 0.5s; 
+  animation-delay: 0.75s; 
 }
 
 .slide-enter:nth-child(6) {
-  animation-delay: 0.6s; 
+  animation-delay: 1s; 
 }
 
 @keyframes height-grow {

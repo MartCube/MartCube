@@ -4,7 +4,7 @@ import AppLogo from './AppLogo.vue'
 
 <template>
   <section class="h-full flex flex-col">
-    <AppLogo class="slide-enter my-2rem" />
+    <AppLogo class="my-2rem" />
     <div class="slide-enter flex flex-col gap-2 [&>p]:w-fit">
       <p class="slide-enter">
         <em class="i-icons-terminal" /> Hello world.
