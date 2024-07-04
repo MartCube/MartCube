@@ -17,6 +17,7 @@ const { formatDate } = useDateFormatter()
     <AppImage
       class="h-[9rem] w-[16rem]"
       :src="data.poster"
+      :alt="data.title"
       width="256"
       height="144"
       fit="max"

@@ -12,7 +12,7 @@ defineProps<{
     <span
       class="mx-1rem mt-0.5rem flex items-start justify-center transition-350"
       text="text-[1.5rem] tracking-[0.2rem]"
-      lg="lg:mx-4rem lg:mt-1.5rem "
+      lg="lg:mx-4rem lg:mt-1.5rem"
     >
       {{ String(cardIndex).padStart(2, '0') }}
     </span>

@@ -29,6 +29,8 @@ const play = ref(false)
         :src="thumbnail"
         width="1280"
         height="720"
+        loading="lazy"
+        placeholder
       />
       <p
         class="absolute left-0 left-50% top-50% h-4rem w-4rem flex cursor-pointer items-center justify-center bg-dark bg-op-75 -translate-x-1/2 -translate-y-1/2"

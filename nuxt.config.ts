@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     '@nuxtjs/sanity',
     '@nuxt/image',
+    '@formkit/auto-animate',
   ],
   eslint: {
     config: {

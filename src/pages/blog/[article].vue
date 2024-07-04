@@ -21,11 +21,15 @@ if (status.value !== 'idle' && !data.value) {
 if (data.value) useMetaTags(data.value.metaTags)
 
 const { formatDate } = useDateFormatter()
+
+function ImgLoad() {
+  console.log('image load')
+}
 </script>
 
 <template>
   <main
-    class="mx-auto max-w-60rem w-90vw w-full flex justify-center pt-[2rem]"
+    class="mx-auto max-w-60rem min-h-100svh w-full pt-[2rem]"
     lg="lg:w-full"
   >
     <template v-if="data && status !== 'pending'">
@@ -35,10 +39,14 @@ const { formatDate } = useDateFormatter()
           <NuxtImg
             class="absolute left-0 top-0 h-full w-full object-cover"
             :src="data.poster"
+            :alt="data.title"
             width="1280"
             height="720"
             fit="max"
+            loading="lazy"
             provider="sanity"
+            placeholder
+            @load="ImgLoad()"
           />
         </div>
         <!-- title -->

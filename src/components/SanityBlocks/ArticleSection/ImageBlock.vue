@@ -11,6 +11,8 @@ defineProps<{
     width="1280"
     height="720"
     fit="max"
+    loading="lazy"
     provider="sanity"
+    placeholder
   />
 </template>
