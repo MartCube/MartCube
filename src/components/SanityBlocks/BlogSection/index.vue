@@ -39,7 +39,9 @@ function updateTag(value: string) {
       @update-tag="updateTag"
     />
     <template v-if="data && status !== 'pending'">
-      <ArticleList :data="data.articleList" />
+      <ArticleList
+        :data="data.articleList"
+      />
     </template>
   </section>
 </template>

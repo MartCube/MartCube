@@ -3,7 +3,7 @@ import ArticleCard from './ArticleCard.vue'
 import type { Article } from '~~/src/assets/types'
 
 defineProps<{
-  data: Article[]
+  data: Article[] | undefined
 }>()
 </script>
 
