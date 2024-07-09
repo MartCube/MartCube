@@ -38,10 +38,10 @@ function updateTag(value: string) {
       :active-tag="activeTag"
       @update-tag="updateTag"
     />
-    <!-- <template v-if="data && status !== 'pending'"> -->
-    <ArticleList
-      :data="data?.articleList"
-    />
-    <!-- </template> -->
+    <template v-if="data && status !== 'pending'">
+      <ArticleList
+        :data="data?.articleList"
+      />
+    </template>
   </section>
 </template>
