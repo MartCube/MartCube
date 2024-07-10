@@ -42,6 +42,5 @@ export default defineNuxtConfig({
     sanity: {
       projectId: 'n11vgkgk',
     },
-    domains: ['i3.ytimg.com'],
   },
 })
