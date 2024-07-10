@@ -27,9 +27,6 @@ const play = ref(false)
       <NuxtImg
         class="h-auto max-w-[1280px] w-full object-cover opacity-75"
         :src="thumbnail"
-        width="1280"
-        height="720"
-        fit="cover"
         loading="lazy"
       />
       <button
