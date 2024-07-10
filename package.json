@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxi build --prerender",
+    "build": "nuxi build",
     "dev": "nuxi dev",
     "generate": "nuxi generate",
     "preview": "nuxi preview",
