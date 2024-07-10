@@ -10,11 +10,11 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     },
   },
-  runtimeConfig: {
-    public: {
-      siteURL: process.env.SITE_URL,
-    },
-  },
+  // runtimeConfig: {
+  //   public: {
+  //     siteURL: process.env.SITE_URL,
+  //   },
+  // },
   modules: [
     'nuxt-typed-router',
     '@nuxt/eslint',

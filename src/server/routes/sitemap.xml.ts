@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   const routes: Sitemap[] = await client.fetch(SitemapQuery)
 
   // generate sitemap
-  const sitemap = new SitemapStream({ hostname: process.env.SITE_URL })
+  const sitemap = new SitemapStream({ hostname: 'https://martcube.netlify.app' })
   routes.forEach((route) => {
     sitemap.write({
       url: route.url,

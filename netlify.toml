@@ -1,0 +1,4 @@
+[build]
+base = "."
+command = "pnpm generate"
+publish = ".output/"
