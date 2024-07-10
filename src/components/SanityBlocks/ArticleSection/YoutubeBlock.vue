@@ -24,19 +24,20 @@ const play = ref(false)
       </div>
     </template>
     <template v-else>
-      <img
+      <NuxtImg
         class="h-auto max-w-[1280px] w-full object-cover opacity-75"
         :src="thumbnail"
         width="1280"
         height="720"
+        fit="cover"
         loading="lazy"
-      >
-      <p
-        class="absolute left-0 left-50% top-50% h-4rem w-4rem flex cursor-pointer items-center justify-center bg-dark bg-op-75 -translate-x-1/2 -translate-y-1/2"
+      />
+      <button
+        class="absolute left-0 left-50% top-50% h-4rem w-4rem flex cursor-pointer items-center justify-center border-none bg-dark bg-op-75 -translate-x-1/2 -translate-y-1/2"
         @click="play=true"
       >
         <span class="i-icons-play h-3rem w-3rem text-primary" />
-      </p>
+      </button>
     </template>
   </div>
 </template>
