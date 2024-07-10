@@ -1,4 +1,4 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import type { NuxtError } from '#app'
 
 defineProps({
@@ -27,14 +27,4 @@ const handleError = () => clearError({ redirect: '/' })
       Home Page
     </button>
   </div>
-</template> -->
-
-<template>
-  <NuxtLayout>
-    <div>
-      <h1>Dang</h1>
-      <p>It looks like something broke.</p>
-      <p>Sorry about that.</p>
-    </div>
-  </NuxtLayout>
 </template>
