@@ -4,7 +4,6 @@ const props = defineProps<{
 }>()
 
 const src = `https://www.youtube.com/embed/${props.id}?autoplay=1`
-// http://www.get-youtube-thumbnail.com/
 const thumbnail = `https://i3.ytimg.com/vi/${props.id}/maxresdefault.jpg`
 
 const play = ref(false)
