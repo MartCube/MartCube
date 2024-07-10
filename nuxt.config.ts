@@ -30,7 +30,6 @@ export default defineNuxtConfig({
       stylistic: true,
       // autoInit: false,
       // standalone: false,
-
     },
   },
   sanity: {
@@ -42,6 +41,12 @@ export default defineNuxtConfig({
   image: {
     sanity: {
       projectId: 'n11vgkgk',
+    },
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/sitemap.xml'],
     },
   },
 })
