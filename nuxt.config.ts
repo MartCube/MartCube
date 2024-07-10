@@ -1,11 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // ssr: true,
-  hooks: {
-    'prerender:routes'({ routes }) {
-      routes.clear() // Do not generate any routes (except the defaults)
-    },
-  },
+  ssr: true,
   devtools: { enabled: true },
   srcDir: 'src',
   css: ['~/assets/base.css'],
