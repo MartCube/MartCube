@@ -31,6 +31,7 @@ const play = ref(false)
         height="720"
         fit="cover"
         loading="lazy"
+        provider="static"
       />
       <button
         class="absolute left-0 left-50% top-50% h-4rem w-4rem flex cursor-pointer items-center justify-center border-none bg-dark bg-op-75 -translate-x-1/2 -translate-y-1/2"
