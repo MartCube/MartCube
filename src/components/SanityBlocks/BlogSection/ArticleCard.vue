@@ -23,13 +23,13 @@ const { formatDate } = useDateFormatter()
       fit="max"
     />
     <div class="flex flex-col gap-2 py-[1rem]">
-      <p class="text-small">
+      <p class="text-small opacity-[0.75] transition-350 group-hover:opacity-[1]">
         {{ formatDate(data.publishedAt) }}
       </p>
       <h3 class="text-subtitle transition-350 2lines group-hover:text-primary">
         {{ data.title }}
       </h3>
-      <div class="flex gap-8 capitalize [&>*]:text-small">
+      <div class="flex gap-8 capitalize opacity-[0.75] transition-350 [&>*]:text-small group-hover:opacity-[1]">
         <span>#{{ data.tag }}</span>
         <span>{{ data.readingTime }}min</span>
       </div>
