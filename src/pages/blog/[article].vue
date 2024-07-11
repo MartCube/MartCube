@@ -7,7 +7,7 @@ import type { Article } from '~~/src/assets/types'
 const { params } = useRoute('blog-article')
 const { fetch } = useSanity()
 const { data, status } = await useLazyAsyncData(
-  `article page ${params.article}`,
+  `article ${params.article}`,
   () => fetch<Article>(ArticleQuery, { uid: params.article }),
 )
 // handle error
@@ -28,10 +28,7 @@ function ImgLoad() {
 </script>
 
 <template>
-  <main
-    class="mx-auto max-w-60rem min-h-100svh w-full pt-[2rem]"
-    lg="lg:w-full"
-  >
+  <main class="page">
     <template v-if="data && status !== 'pending'">
       <article class="mb-[2rem] w-full flex flex-col gap-[2rem]">
         <!-- poster -->

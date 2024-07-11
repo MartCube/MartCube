@@ -7,7 +7,7 @@ import AppContent from '~/components/App/AppContent.vue'
 const { params } = useRoute('page')
 const { fetch } = useSanity()
 const { data, status } = await useLazyAsyncData(
-  `page ${params.page}`,
+  `${params.page}`,
   () => fetch<Page>(PageQuery, { uid: params.page }),
 )
 
@@ -24,9 +24,9 @@ if (data.value)useMetaTags(data.value.metaTags)
 </script>
 
 <template>
-  <div class="mx-auto max-w-60rem min-h-80svh w-90vw flex justify-center pb-2rem pt-2rem lg:w-full">
+  <main class="page">
     <template v-if="data && status !== 'pending'">
       <AppContent :content="data.content" />
     </template>
-  </div>
+  </main>
 </template>

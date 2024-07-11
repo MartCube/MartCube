@@ -3,8 +3,8 @@ import AppLogo from './AppLogo.vue'
 </script>
 
 <template>
-  <section class="h-full flex flex-col">
-    <AppLogo class="my-2rem" />
+  <section class="h-full flex flex-col gap-[2rem]">
+    <AppLogo />
     <div class="slide-enter flex flex-col gap-2 [&>p]:w-fit">
       <p class="slide-enter">
         <em class="i-icons-terminal" /> Hello world.

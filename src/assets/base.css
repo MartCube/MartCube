@@ -96,6 +96,11 @@ article h2 {
   }
 }
 
-.height-grow {
-  animation: height-grow 1s ease both;
+@keyframes width-grow {
+  0% {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }

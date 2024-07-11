@@ -54,11 +54,9 @@ export default defineConfig({
   ],
   shortcuts: {
     'test': 'border-solid border-0.5 border-white',
-    'text-m': 'text-[1.25rem] leading-[1.5rem]',
-    'text-l': 'text-[1.5rem] leading-[2rem]',
-    'text-xl': 'text-[2.5rem] leading-[3rem]',
     'disabled': 'opacity-50 cursor-default pointer-events-none',
     'transition-350': 'transition duration-350 ease',
+    'page': 'max-w-60rem min-h-80svh w-90vw mx-auto py-4rem lg:w-full',
   },
   theme: {
     colors: {
@@ -80,7 +78,7 @@ export default defineConfig({
         'letter-spacing': '0',
         'font-weight': '400',
       }],
-      subtitle: ['1.75rem', {
+      subtitle: ['1.5rem', {
         'line-height': '2.25rem',
         'letter-spacing': '0.05rem',
         'font-weight': '300',
@@ -90,9 +88,6 @@ export default defineConfig({
         'letter-spacing': '0.1rem',
         'font-weight': '500',
       }],
-    },
-    spacing: {
-      section: '60rem',
     },
   },
   transformers: [

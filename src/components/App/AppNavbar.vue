@@ -22,7 +22,6 @@ const links: Link[] = [
 // onClickOutside(linksRef, () => (menuValue.value = false))
 </script>
 
-<!-- exactActiveClass -->
 <template>
   <header
     class="mx-auto h-10svh max-w-60rem w-90vw lg:w-full"
@@ -30,8 +29,10 @@ const links: Link[] = [
   >
     <!-- :class="{ show: menuValue }" -->
     <nav
-      class="py-[1rem]"
+      class="relative h-full"
+      flex="~ row items-center"
     >
+      <span class="absolute bottom-0 left-0 h-1px w-0 animate-[width-grow_1.5s_ease_both] bg-cream" />
       <ul
         ref="linksRef"
         class="w-full flex gap-2"

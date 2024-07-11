@@ -14,14 +14,14 @@ const handleError = () => clearError({ redirect: '/' })
       class="w-[10rem]"
       src="chopper.png"
     />
-    <h1 class="text-xl">
+    <h1 class="font-size-[3rem] leading-[4rem]">
       {{ error?.statusCode }}
     </h1>
-    <p class="text-l opacity-75">
+    <p class="text-title opacity-75">
       {{ error?.statusMessage }}
     </p>
     <button
-      class="w-fit cursor-pointer border-b-0.5 border-b-primary border-none border-b-solid bg-transparent pb-2 text-m text-cream hover:text-primary"
+      class="w-fit cursor-pointer border-b-0.5 border-b-primary border-none border-b-solid bg-transparent pb-2 text-base text-cream hover:text-primary"
       @click="handleError"
     >
       Home Page
