@@ -11,6 +11,8 @@ const { data, status } = await useLazyAsyncData(
   () => fetch<Page>(PageQuery, { uid: params.page }),
 )
 
+console.log(status.value, data.value)
+
 // handle error
 if (status.value !== 'idle' && !data.value) {
   throw createError({
