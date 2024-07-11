@@ -21,6 +21,7 @@ const { formatDate } = useDateFormatter()
       width="256"
       height="144"
       fit="max"
+      placeholder
     />
     <div class="flex flex-col gap-2 py-[1rem]">
       <p class="text-small opacity-[0.75] transition-350 group-hover:opacity-[1]">

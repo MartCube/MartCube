@@ -9,12 +9,15 @@ const { fetch } = useSanity()
 const { data, status } = await useLazyAsyncData(
   `${params.page}`,
   () => fetch<Page>(PageQuery, { uid: params.page }),
+  {
+    server: false,
+  },
 )
-
-console.log(status.value, data.value)
 
 // handle error
 if (status.value !== 'idle' && !data.value) {
+  console.log('error')
+
   throw createError({
     statusCode: 404,
     statusMessage: 'Page Not Found',
