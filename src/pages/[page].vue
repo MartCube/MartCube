@@ -6,21 +6,16 @@ import AppContent from '~/components/App/AppContent.vue'
 // fetch data
 const { params } = useRoute('page')
 const { fetch } = useSanity()
-const { data, status } = await useLazyAsyncData(
-  `${params.page}`,
-  () => fetch<Page>(PageQuery, { uid: params.page }),
-  {
-    server: false,
-  },
+const { data, status, error } = await useAsyncData(
+  `page-${params.page}`,
+  async () => await fetch<Page>(PageQuery, { uid: params.page }),
 )
 
 // handle error
-if (status.value !== 'idle' && !data.value) {
-  console.log('error')
-
+if (error.value || !data.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Page Not Found',
+    statusMessage: `Page Not Found`,
     fatal: true,
   })
 }

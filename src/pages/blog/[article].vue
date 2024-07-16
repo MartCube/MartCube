@@ -6,18 +6,20 @@ import type { Article } from '~~/src/assets/types'
 // fetch data
 const { params } = useRoute('blog-article')
 const { fetch } = useSanity()
-const { data, status } = await useLazyAsyncData(
-  `article ${params.article}`,
-  () => fetch<Article>(ArticleQuery, { uid: params.article }),
+const { data, status, error } = await useAsyncData(
+  `article-${params.article}`,
+  async () => await fetch<Article>(ArticleQuery, { uid: params.article }),
 )
+
 // handle error
-if (status.value !== 'idle' && !data.value) {
+if (error.value || !data.value) {
   throw createError({
     statusCode: 404,
     statusMessage: `Article Not Found`,
     fatal: true,
   })
 }
+
 if (data.value) useMetaTags(data.value.metaTags)
 
 const { formatDate } = useDateFormatter()
