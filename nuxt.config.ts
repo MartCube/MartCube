@@ -37,6 +37,7 @@ export default defineNuxtConfig({
       projectId: 'n11vgkgk',
     },
   },
+  ssr: false,
   nitro: {
     prerender: {
       crawlLinks: true,
