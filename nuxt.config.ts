@@ -40,7 +40,10 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml'],
+      routes: [
+        '/sitemap.xml',
+        '/_ipx/_/chopper.png',
+      ],
     },
   },
 })
