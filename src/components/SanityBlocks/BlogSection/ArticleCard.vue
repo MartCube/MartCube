@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Article } from '~~/src/assets/types'
-import AppImage from '~/components/App/AppImage.vue'
 
 defineProps<{
   data: Article
@@ -14,13 +13,15 @@ const { formatDate } = useDateFormatter()
     class="group w-[16rem] flex flex-col"
     :to="`/blog/${data.uid}`"
   >
-    <AppImage
+    <NuxtImg
       class="h-[9rem] w-[16rem]"
       :src="data.poster"
       :alt="data.title"
       width="256"
       height="144"
       fit="max"
+      loading="lazy"
+      provider="sanity"
       placeholder
     />
     <div class="flex flex-col gap-2 py-[1rem]">

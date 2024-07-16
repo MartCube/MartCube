@@ -11,9 +11,11 @@ const handleError = () => clearError({ redirect: '/' })
 <template>
   <div class="h-full min-h-100svh flex flex-col items-center justify-center gap-5">
     <NuxtImg
-      class="w-[10rem]"
+      class="h-12rem"
       src="chopper.png"
+      lazyload="true"
     />
+
     <h1 class="font-size-[3rem] leading-[4rem]">
       {{ error?.statusCode }}
     </h1>
