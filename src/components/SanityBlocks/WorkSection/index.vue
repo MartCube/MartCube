@@ -8,15 +8,13 @@ defineProps<{
 </script>
 
 <template>
-  <section>
-    <div class="relative h-full flex flex-col gap-2rem border-l-0.5">
-      <span class="absolute left-0 top-0 h-0 w-1px animate-[height-grow_2s_ease_both] bg-cream" />
-      <ProjectCard
-        v-for="(project, index) in projects"
-        :key="project.title"
-        :data="project"
-        :card-index="index + 1"
-      />
-    </div>
+  <section class="relative h-full flex flex-col gap-2rem border-l-0.5">
+    <span class="absolute left-0 top-0 h-0 w-1px animate-[height-grow_2s_ease_both] bg-cream" />
+    <ProjectCard
+      v-for="(project, index) in projects"
+      :key="project.title"
+      :data="project"
+      :card-index="index + 1"
+    />
   </section>
 </template>

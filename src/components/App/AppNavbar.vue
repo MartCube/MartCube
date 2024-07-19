@@ -41,6 +41,7 @@ const links: Link[] = [
         <li
           v-for="(link, i) in links"
           :key="link.value"
+          class="slide-enter"
         >
           <NuxtLink
             class="p-4 text-base capitalize transition-350 hover:text-primary"

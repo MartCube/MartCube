@@ -10,12 +10,13 @@ const { copy, copied } = useClipboard({ source })
     class="relative mx-auto h-10svh max-w-60rem w-90vw lg:w-full"
     flex="~ justify-between items-center gap-4"
   >
-    <span class="absolute right-0 top-0 h-1px w-0 animate-[width-grow_1.5s_ease_both] bg-cream" />
-    <p class="text-small">
+    <span class="absolute right-0 top-0 h-1px w-0 flex animate-[width-grow_1.5s_ease_both] bg-cream" />
+
+    <p class="slide-enter text-small">
       <em class="i-icons-copyright mb-3px" /> All rights reserved
     </p>
 
-    <ul class="flex gap-4 [&_a]:text-subtitle [&_a:hover]:text-primary">
+    <ul class="slide-enter flex gap-4 [&_a]:text-subtitle [&_a:hover]:text-primary">
       <li>
         <button
           class="cursor-pointer border-none bg-transparent text-subtitle text-cream hover:text-primary"

@@ -86,6 +86,16 @@ article h2 {
 .slide-enter:nth-child(6) {
   animation-delay: 1s; 
 }
+.slide-enter:nth-child(7) {
+  animation-delay: 1s; 
+}
+.slide-enter:nth-child(8) {
+  animation-delay: 1s; 
+}
+.slide-enter:nth-child(9) {
+  animation-delay: 1s; 
+}
+
 
 @keyframes height-grow {
   0% {

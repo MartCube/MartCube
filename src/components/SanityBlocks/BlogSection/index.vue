@@ -7,21 +7,16 @@ import type { Blog } from '~~/src/assets/types'
 // fetch data
 const activeTag = ref('all')
 const { fetch } = useSanity()
-const { data, status } = await useLazyAsyncData(
-  'blog articles',
-  () =>
-    fetch<Blog>(BlogQuery, {
-      activeTag: activeTag.value,
-    }),
-  {
-    watch: [activeTag],
-  },
+const { data, status, error } = await useLazyAsyncData(
+  'blog-articles',
+  async () => await fetch<Blog>(BlogQuery, { activeTag: activeTag.value }),
+  { watch: [activeTag] },
 )
 // handle error
-if (status.value !== 'idle' && !data.value) {
+if (error.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Blog Not Found',
+    statusMessage: `Articles Not Found`,
     fatal: true,
   })
 }
@@ -32,7 +27,7 @@ function updateTag(value: string) {
 </script>
 
 <template>
-  <section class="h-auto w-full flex flex-col gap-[4rem]">
+  <section class="h-full flex flex-col gap-[4rem]">
     <TagFilter
       :article-tags="data?.articleTags"
       :active-tag="activeTag"
