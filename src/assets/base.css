@@ -6,6 +6,10 @@
 	--uno: bg-primary text-dark;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 html {
 	--uno: bg-dark scroll-smooth;
 }
@@ -34,6 +38,15 @@ header nav a.router-link-exact-active{
 article h2 {
 	--uno: text-subtitle pb-2 w-fit;
 	--uno: border-b-1 border-b-primary border-b-solid;
+}
+
+article ul {
+	--uno: flex flex-col gap-[1rem]
+}
+
+article ul li {
+	--uno: flex items-center gap-[1rem]
+	--uno: relative before:content-[''] before:bg-primary before-w-[0.8rem] before-h-[0.8rem] before:rounded-[0.8rem];
 }
 
 blockquote { 

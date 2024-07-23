@@ -10,7 +10,7 @@ const { formatDate } = useDateFormatter()
 
 <template>
   <NuxtLink
-    class="group w-[16rem] flex flex-col"
+    class="group h-[21rem] w-[16rem] flex flex-col justify-between"
     :to="`/blog/${data.uid}`"
   >
     <NuxtImg
