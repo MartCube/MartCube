@@ -14,7 +14,7 @@ const serializers = {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2rem">
+  <div class="slide-enter flex flex-col gap-2rem">
     <SanityContent
       :blocks="content"
       :serializers="serializers"
