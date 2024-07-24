@@ -1,4 +1,4 @@
-##  Hello :v: 🤖  
+##  Hello :v:  
 
 ▫️ ▪️ Personal Website ▪️  ▫️  
 https://martcube.netlify.app/  
