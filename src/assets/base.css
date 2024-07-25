@@ -29,6 +29,10 @@ ul, li {
 	list-style: none;
 }
 
+button{
+	--uno: cursor-pointer border-none bg-transparent;
+}
+
 /* ### Navbar ### */
 header nav a.router-link-exact-active{
 	--uno: text-primary;

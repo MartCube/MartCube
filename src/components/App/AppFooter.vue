@@ -19,7 +19,7 @@ const { copy, copied } = useClipboard({ source })
     <ul class="slide-enter flex gap-4 [&_a]:text-subtitle [&_a:hover]:text-primary">
       <li>
         <button
-          class="cursor-pointer border-none bg-transparent text-subtitle text-cream hover:text-primary"
+          class="text-subtitle text-cream hover:text-primary"
           aria-label="Copy Email"
           @click="copy()"
         >

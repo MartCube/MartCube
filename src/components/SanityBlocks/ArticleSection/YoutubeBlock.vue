@@ -32,7 +32,7 @@ const play = ref(false)
         loading="lazy"
       >
       <button
-        class="absolute left-0 left-51% top-50% h-4rem w-4rem flex cursor-pointer items-center justify-center border-none bg-dark bg-op-75 -translate-x-1/2 -translate-y-1/2"
+        class="absolute left-0 left-51% top-50% h-4rem w-4rem flex items-center justify-center bg-dark bg-op-75 -translate-x-1/2 -translate-y-1/2"
         @click="play=true"
       >
         <span class="i-icons-play h-3rem w-3rem text-primary" />

@@ -23,7 +23,7 @@ const handleError = () => clearError({ redirect: '/' })
       {{ error?.statusMessage }}
     </p>
     <button
-      class="w-fit cursor-pointer border-b-0.5 border-b-primary border-none border-b-solid bg-transparent pb-2 text-base text-cream hover:text-primary"
+      class="w-fit border-b-0.5 border-b-primary border-b-solid pb-2 text-base text-cream hover:text-primary"
       @click="handleError"
     >
       Home Page
