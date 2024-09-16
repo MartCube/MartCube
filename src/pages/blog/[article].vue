@@ -36,7 +36,9 @@ if (data.value) useMetaTags(data.value.metaTags)
           :reading-time="data.readingTime"
           :tag="data.tag"
         />
-        <ArticleContent :content="data.content" />
+        <ArticleContent
+          :content="data.content"
+        />
       </article>
     </template>
   </main>
