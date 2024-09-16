@@ -12,18 +12,17 @@ const { formatDate } = useDateFormatter()
 
 <template>
   <!-- poster -->
-  <div class="slide-enter relative h-0 w-inherit overflow-hidden pb-[56.25%]">
-    <NuxtImg
-      :src="poster"
-      :alt="title"
-      width="1280"
-      height="720"
-      fit="max"
-      loading="lazy"
-      provider="sanity"
-      placeholder
-    />
-  </div>
+  <NuxtImg
+    class="h-auto max-w-[1280px] w-full object-cover"
+    :src="poster"
+    :alt="title"
+    width="1280"
+    height="720"
+    fit="max"
+    loading="lazy"
+    provider="sanity"
+    placeholder
+  />
   <!-- title -->
   <h1 class="slide-enter relative w-fit pb-[2rem] text-title">
     {{ title }}

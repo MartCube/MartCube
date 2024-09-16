@@ -59,8 +59,8 @@ onClickOutside(linksRef, () => menuValue.value = false)
       class="h-[2rem] w-[2rem] flex flex-col justify-around md:hidden"
       @click="menuToggle()"
     >
-      <span class="h-[2px] w-full bg-primary" />
-      <span class="h-[2px] w-full bg-primary" />
+      <span class="h-[2px] w-0 origin-left animate-[width-grow_0.75s_ease_both] bg-primary" />
+      <span class="ml-auto h-[2px] w-0 origin-right animate-[width-grow_0.75s_ease_both] bg-primary" />
     </button>
   </header>
 </template>

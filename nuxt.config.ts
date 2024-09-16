@@ -1,13 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
-  srcDir: 'src',
+  compatibilityDate: '2024-09-16',
   css: ['~/assets/base.css'],
+  srcDir: 'src',
+
   app: {
     head: {
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     },
   },
+
   modules: [
     'nuxt-typed-router',
     '@nuxt/eslint',
@@ -17,6 +21,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@formkit/auto-animate',
   ],
+
   eslint: {
     config: {
       // https://github.com/eslint-community/eslint-stylistic/blob/main/packages/eslint-plugin/configs/customize.ts
@@ -25,18 +30,20 @@ export default defineNuxtConfig({
       // standalone: false,
     },
   },
+
   sanity: {
     projectId: 'n11vgkgk',
     dataset: 'production',
     minimal: true,
     apiVersion: '2024-06-04', // JavaScript client, no prefix 'v' is needed
   },
+
   image: {
     sanity: {
       projectId: 'n11vgkgk',
     },
   },
-  ssr: false,
+
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -46,4 +53,5 @@ export default defineNuxtConfig({
       ],
     },
   },
+
 })
