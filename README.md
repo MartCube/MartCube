@@ -1,5 +1,3 @@
-## Hello :v:
-
 ▫️ ▪️ Personal Website ▪️  ▫️
 
 - [Code on GitHub](https://github.com/MartCube/MartCube)
