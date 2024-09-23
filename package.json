@@ -17,21 +17,23 @@
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/sanity": "^1.12.1",
     "@sanity/image-url": "^1.0.2",
-    "@unocss/nuxt": "^0.62.3",
+    "@unocss/nuxt": "^0.62.4",
     "@vueuse/core": "^11.1.0",
     "nuxt": "^3.13.2",
     "nuxt-typed-router": "^3.6.5",
     "sitemap": "^8.0.0",
-    "unocss": "^0.62.3",
-    "vue": "^3.5.6",
+    "unocss": "^0.62.4",
+    "vue": "^3.5.8",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.6.2",
+    "@antfu/eslint-config": "^3.7.1",
     "@nuxt/eslint": "^0.5.7",
-    "@unocss/eslint-config": "^0.62.3",
-    "@unocss/transformer-directives": "^0.62.3",
-    "eslint": "^9.10.0",
-    "sass": "^1.78.0"
+    "@unocss/eslint-config": "^0.62.4",
+    "@unocss/transformer-directives": "^0.62.4",
+    "eslint": "^9.11.0",
+    "sass": "^1.79.3",
+    "typescript": "^5.6.2",
+    "vue-tsc": "^2.1.6"
   }
 }

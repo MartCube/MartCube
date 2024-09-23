@@ -2,7 +2,6 @@
 import youtube from './YoutubeBlock.vue'
 import image from './ImageBlock.vue'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 defineProps<{ content: any }>()
 
 const serializers = {
