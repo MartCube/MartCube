@@ -1,5 +1,6 @@
 /* eslint-disable @stylistic/no-tabs */
 
+// Page - $uid
 export const PageQuery = groq`*
 [_type == "page" && uid.current == $uid][0]{
 	content[]{

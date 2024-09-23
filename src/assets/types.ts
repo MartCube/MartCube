@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// wait until sanity-TypeGen gets out of beta
 // https://www.sanity.io/docs/sanity-typegen
 // https://www.sanity.io/learn/course/typescripted-content/introduction
 
