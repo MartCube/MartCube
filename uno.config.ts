@@ -18,7 +18,7 @@ export default defineConfig({
     presetWebFonts({
       provider: 'google',
       fonts: {
-        fira: 'Fira Code:300,400,500',
+        fira: 'Fira Code',
       },
     }),
     presetIcons({
